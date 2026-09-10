@@ -2,8 +2,9 @@
 
 | Item | Value |
 |---|---|
-| Repository | `pig-detection-reproducibility-yolo26` (local; **not yet pushed**) |
-| Repository URL | _to be filled after `git push` — `https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26`_ |
+| Repository | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26 (public) |
+| Repository URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26 |
+| Release URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.0 |
 | Release tag | **v1.0.0** (annotated) |
 | Release commit SHA | the commit that tag `v1.0.0` points to — resolve with `git rev-list -n1 v1.0.0` (it is the tip of `main` at freeze time; this file intentionally avoids hard-coding its own SHA) |
 | Experimental audit commit (development repository) | **0f51028** (`git rev-parse HEAD` of the private development repo at freeze time) |
@@ -80,16 +81,14 @@
 - Hyper-parameters were fixed a priori (CA r = 32; SIoU θ = 4; two local BiFPN-style fusion nodes) and
   were not exhaustively tuned.
 
-## Remaining steps (require the repository owner's GitHub login)
+## Publication status (completed 2026-09-09)
 
-```bash
-# after creating an empty public repository named pig-detection-reproducibility-yolo26
-cd pig-detection-reproducibility-yolo26
-git remote add origin https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26.git
-git branch -M main
-git push -u origin main
-git push origin v1.0.0
-```
+- Repository (public): https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26
+- Release: https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.0
+- Release tag: `v1.0.0` (annotated) — release commit resolvable with `git rev-list -n1 v1.0.0` (= `84a7f08`)
+- Upload method: `gh repo create … --public --source … --remote origin --push` followed by
+  `git push origin v1.0.0` and `gh release create v1.0.0 …` (through the local HTTPS proxy).
+- Commit identity for the public repository: `XiaoBei12121 <XiaoBei12121@users.noreply.github.com>`
+  (no personal e-mail is exposed in the git history).
 
-Then create the GitHub Release for tag `v1.0.0` and fill the repository URL / release URL above
-(and the placeholder `XiaoBei12121` in `README.md` and `CITATION.cff`).
+Remaining metadata task: fill the manuscript author list in `CITATION.cff` (currently `TBD`).
