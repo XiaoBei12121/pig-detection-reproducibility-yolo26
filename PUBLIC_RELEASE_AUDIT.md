@@ -51,8 +51,8 @@
 | No checkpoints | scan for `*.pt`, `*.pth`, `*.onnx`, `*.engine` | **none present** |
 | No archives / logs / secrets files | scan for `*.zip`, `*.log`, `.env`, `*.key`, `*.pem` | **none present** |
 | No large files | `Get-ChildItem -Recurse | Where Length > 10MB` | **none** |
-| No absolute local paths | regex scan `C:\Users\`, `[A-Z]:\`, `/home/`, `/root/`, `26079` over all text files | **0 hits** (2 pip-freeze lines with local editable-install paths were replaced by path-free notes) |
-| No credentials | regex scan `ghp_`, `sk-…`, `BEGIN … PRIVATE KEY`, `api_key`, `password`, `token` | **0 hits** |
+| No absolute local paths | regex scan for Windows/Unix absolute-path prefixes and the local user-id string over all text files | **0 hits** (2 pip-freeze lines with local editable-install paths were replaced by path-free notes) |
+| No credentials | regex scan for common credential patterns (provider-style access tokens, private-key headers, api-key/password/token assignments) | **0 hits** |
 | Statistics reproduction | `scripts/analysis/reproduce_statistics.py --figure` | reproduces 5-seed mean/SD (E0 0.7732 ± 0.0032; E5 0.7761 ± 0.0030), paired Δ +0.0029, exhaustive bootstrap CI [−0.00048, 0.00628] (3125 resamples), exact sign-flip p = 0.3125, PigLife best/last, YOLO11s best/last, rank stability; Figure 10 regenerated |
 | Bootstrap / permutation scripts | `bootstrap_multiseed_e0_e5.py`, `permutation_test.py` | run successfully; values match the manuscript |
 | Table regeneration | `scripts/analysis/reproduce_tables.py` | all 18 tables regenerated (`results/generated/table01…table18.csv`) |
