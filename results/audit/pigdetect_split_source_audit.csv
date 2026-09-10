@@ -1,0 +1,7 @@
+split,images,instances,danuma,psota,alameer,bergamini,other,unique_source_groups,unique_clip_groups,clip_overlap_with_main_train,same_source_as_official_test
+main_train,2411,33069,1319,654,271,167,0,4,1553,-,True
+main_val,270,3672,135,79,37,19,0,4,176,17,True
+official_test,250,5436,250,0,0,0,0,1,250,0,True
+cross_scene_train,1098,13721,0,658,274,166,0,3,235,219,False
+cross_scene_val,129,1659,0,75,34,20,0,3,35,27,False
+cross_scene_test,450,6549,450,0,0,0,0,1,450,411,True

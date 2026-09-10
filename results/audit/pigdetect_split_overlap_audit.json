@@ -1,0 +1,3292 @@
+{
+  "audit": "PigDetect split/source audit",
+  "script": "scripts/audit_pigdetect_split_source.py",
+  "script_version": "1.0",
+  "project_commit": "0f51028a38f074d8a513a0a01ef0f0512fbb5d42",
+  "rules": {
+    "source_prefix": "leading token of the file name; one of danuma/psota/alameer/bergamini",
+    "base_name": "Roboflow suffix removed: re.sub(r\"_jpg(\\.rf\\.[0-9a-f]+)?$\", \"\", stem)",
+    "clip_key": "text before '--' > text before '_frame_' > strip trailing '-<digits>' > strip trailing '_<digits>' > base name",
+    "clip_limitation": "danuma file names expose no frame/video marker; clip key falls back to the base name"
+  },
+  "splits": {
+    "main_train": {
+      "path": "PigDetect/train",
+      "images": 2411,
+      "instances": 33069,
+      "source_counts": {
+        "alameer": 271,
+        "bergamini": 167,
+        "danuma": 1319,
+        "psota": 654
+      },
+      "unique_source_groups": 4,
+      "unique_clip_groups": 1553
+    },
+    "main_val": {
+      "path": "PigDetect/val",
+      "images": 270,
+      "instances": 3672,
+      "source_counts": {
+        "alameer": 37,
+        "bergamini": 19,
+        "danuma": 135,
+        "psota": 79
+      },
+      "unique_source_groups": 4,
+      "unique_clip_groups": 176
+    },
+    "official_test": {
+      "path": "PigDetect/test",
+      "images": 250,
+      "instances": 5436,
+      "source_counts": {
+        "danuma": 250
+      },
+      "unique_source_groups": 1,
+      "unique_clip_groups": 250
+    },
+    "cross_scene_train": {
+      "path": "PigDetect_cs/train_cs",
+      "images": 1098,
+      "instances": 13721,
+      "source_counts": {
+        "alameer": 274,
+        "bergamini": 166,
+        "psota": 658
+      },
+      "unique_source_groups": 3,
+      "unique_clip_groups": 235
+    },
+    "cross_scene_val": {
+      "path": "PigDetect_cs/val_cs",
+      "images": 129,
+      "instances": 1659,
+      "source_counts": {
+        "alameer": 34,
+        "bergamini": 20,
+        "psota": 75
+      },
+      "unique_source_groups": 3,
+      "unique_clip_groups": 35
+    },
+    "cross_scene_test": {
+      "path": "PigDetect_cs/test_cs",
+      "images": 450,
+      "instances": 6549,
+      "source_counts": {
+        "danuma": 450
+      },
+      "unique_source_groups": 1,
+      "unique_clip_groups": 450
+    }
+  },
+  "image_level_intersections": {
+    "main_train__main_val": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "main_train__official_test": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "main_val__official_test": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "official_test__cross_scene_test": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "cross_scene_train__cross_scene_test": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "cross_scene_val__cross_scene_test": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "cross_scene_train__cross_scene_val": {
+      "count": 0,
+      "examples": [],
+      "names_examples": []
+    },
+    "main_train__cross_scene_test": {
+      "count": 411,
+      "examples": [
+        "danuma_004",
+        "danuma_009",
+        "danuma_010",
+        "danuma_012",
+        "danuma_016",
+        "danuma_022",
+        "danuma_023",
+        "danuma_025",
+        "danuma_029",
+        "danuma_033",
+        "danuma_035",
+        "danuma_036",
+        "danuma_037",
+        "danuma_038",
+        "danuma_039",
+        "danuma_041",
+        "danuma_045",
+        "danuma_050",
+        "danuma_058",
+        "danuma_059"
+      ],
+      "names_examples": [
+        "danuma_004.jpg",
+        "danuma_009.jpg",
+        "danuma_010.jpg",
+        "danuma_012.jpg",
+        "danuma_016.jpg"
+      ]
+    },
+    "main_val__cross_scene_test": {
+      "count": 39,
+      "examples": [
+        "danuma_019",
+        "danuma_069",
+        "danuma_1007",
+        "danuma_103",
+        "danuma_1045",
+        "danuma_1062",
+        "danuma_1098",
+        "danuma_1126",
+        "danuma_1200",
+        "danuma_1215",
+        "danuma_1231",
+        "danuma_1244",
+        "danuma_1391",
+        "danuma_1422",
+        "danuma_143",
+        "danuma_1448",
+        "danuma_1475",
+        "danuma_1504",
+        "danuma_1525",
+        "danuma_178"
+      ],
+      "names_examples": [
+        "danuma_019.jpg",
+        "danuma_069.jpg",
+        "danuma_1007.jpg",
+        "danuma_103.jpg",
+        "danuma_1045.jpg"
+      ]
+    }
+  },
+  "clip_level_intersections": {
+    "main_train__main_val": {
+      "count": 17,
+      "examples": [
+        "alameer_Pen1_201911081057GP011730",
+        "alameer_Pen1_201911081132GP031730",
+        "alameer_Pen1_201911261541GP171855",
+        "alameer_Pen1_201912121143GP041858",
+        "alameer_Pen1_201912121201GP051858",
+        "alameer_Pen2_201911081136GP031615",
+        "alameer_Pen2_201911081153GP041615",
+        "alameer_Pen2_201911081357GP111615",
+        "alameer_Pen2_201911081415GP121615",
+        "alameer_Pen2_201912030930GP013839",
+        "alameer_Pen2_201912031431GP183839",
+        "alameer_Pen7_201911081149GP051730",
+        "alameer_Pen8_201911081054GP011730",
+        "alameer_Pen8_201912031318GP141625",
+        "bergamini_PIGS041219__000221",
+        "bergamini_PIGS281119__000134",
+        "psota"
+      ]
+    },
+    "main_train__official_test": {
+      "count": 0,
+      "examples": []
+    },
+    "main_val__official_test": {
+      "count": 0,
+      "examples": []
+    },
+    "official_test__cross_scene_test": {
+      "count": 0,
+      "examples": []
+    },
+    "cross_scene_train__cross_scene_test": {
+      "count": 0,
+      "examples": []
+    },
+    "cross_scene_val__cross_scene_test": {
+      "count": 0,
+      "examples": []
+    },
+    "cross_scene_train__cross_scene_val": {
+      "count": 12,
+      "examples": [
+        "alameer_Pen1_201911261541GP171855",
+        "alameer_Pen1_201912121143GP041858",
+        "alameer_Pen1_201912121422GP131858",
+        "alameer_Pen2_201911081153GP041615",
+        "alameer_Pen2_201911081357GP111615",
+        "alameer_Pen2_201911081433GP131615",
+        "alameer_Pen2_201912030930GP013839",
+        "alameer_Pen2_201912031431GP183839",
+        "alameer_Pen8_201912031318GP141625",
+        "bergamini_PIGS011219__000529",
+        "bergamini_PIGS281119__000134",
+        "psota"
+      ]
+    },
+    "main_train__cross_scene_test": {
+      "count": 411,
+      "examples": [
+        "danuma_004",
+        "danuma_009",
+        "danuma_010",
+        "danuma_012",
+        "danuma_016",
+        "danuma_022",
+        "danuma_023",
+        "danuma_025",
+        "danuma_029",
+        "danuma_033",
+        "danuma_035",
+        "danuma_036",
+        "danuma_037",
+        "danuma_038",
+        "danuma_039",
+        "danuma_041",
+        "danuma_045",
+        "danuma_050",
+        "danuma_058",
+        "danuma_059"
+      ]
+    },
+    "main_val__cross_scene_test": {
+      "count": 39,
+      "examples": [
+        "danuma_019",
+        "danuma_069",
+        "danuma_1007",
+        "danuma_103",
+        "danuma_1045",
+        "danuma_1062",
+        "danuma_1098",
+        "danuma_1126",
+        "danuma_1200",
+        "danuma_1215",
+        "danuma_1231",
+        "danuma_1244",
+        "danuma_1391",
+        "danuma_1422",
+        "danuma_143",
+        "danuma_1448",
+        "danuma_1475",
+        "danuma_1504",
+        "danuma_1525",
+        "danuma_178"
+      ]
+    }
+  },
+  "shared_clip_details": {
+    "main_train__main_val": {
+      "count": 17,
+      "details": [
+        {
+          "clip": "alameer_Pen1_201911081057GP011730",
+          "source": "alameer",
+          "images_in_main_train": 4,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen1_201911081132GP031730",
+          "source": "alameer",
+          "images_in_main_train": 3,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen1_201911261541GP171855",
+          "source": "alameer",
+          "images_in_main_train": 4,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen1_201912121143GP041858",
+          "source": "alameer",
+          "images_in_main_train": 2,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen1_201912121201GP051858",
+          "source": "alameer",
+          "images_in_main_train": 5,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081136GP031615",
+          "source": "alameer",
+          "images_in_main_train": 3,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081153GP041615",
+          "source": "alameer",
+          "images_in_main_train": 3,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081357GP111615",
+          "source": "alameer",
+          "images_in_main_train": 2,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081415GP121615",
+          "source": "alameer",
+          "images_in_main_train": 5,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201912030930GP013839",
+          "source": "alameer",
+          "images_in_main_train": 5,
+          "images_in_main_val": 2
+        },
+        {
+          "clip": "alameer_Pen2_201912031431GP183839",
+          "source": "alameer",
+          "images_in_main_train": 3,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen7_201911081149GP051730",
+          "source": "alameer",
+          "images_in_main_train": 5,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen8_201911081054GP011730",
+          "source": "alameer",
+          "images_in_main_train": 6,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "alameer_Pen8_201912031318GP141625",
+          "source": "alameer",
+          "images_in_main_train": 3,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "bergamini_PIGS041219__000221",
+          "source": "bergamini",
+          "images_in_main_train": 1,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "bergamini_PIGS281119__000134",
+          "source": "bergamini",
+          "images_in_main_train": 1,
+          "images_in_main_val": 1
+        },
+        {
+          "clip": "psota",
+          "source": "psota",
+          "images_in_main_train": 654,
+          "images_in_main_val": 79
+        }
+      ]
+    },
+    "cross_scene_train__cross_scene_val": {
+      "count": 12,
+      "details": [
+        {
+          "clip": "alameer_Pen1_201911261541GP171855",
+          "source": "alameer",
+          "images_in_cross_scene_train": 4,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen1_201912121143GP041858",
+          "source": "alameer",
+          "images_in_cross_scene_train": 2,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen1_201912121422GP131858",
+          "source": "alameer",
+          "images_in_cross_scene_train": 2,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081153GP041615",
+          "source": "alameer",
+          "images_in_cross_scene_train": 3,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081357GP111615",
+          "source": "alameer",
+          "images_in_cross_scene_train": 2,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201911081433GP131615",
+          "source": "alameer",
+          "images_in_cross_scene_train": 2,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen2_201912030930GP013839",
+          "source": "alameer",
+          "images_in_cross_scene_train": 5,
+          "images_in_cross_scene_val": 2
+        },
+        {
+          "clip": "alameer_Pen2_201912031431GP183839",
+          "source": "alameer",
+          "images_in_cross_scene_train": 3,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "alameer_Pen8_201912031318GP141625",
+          "source": "alameer",
+          "images_in_cross_scene_train": 3,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "bergamini_PIGS011219__000529",
+          "source": "bergamini",
+          "images_in_cross_scene_train": 1,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "bergamini_PIGS281119__000134",
+          "source": "bergamini",
+          "images_in_cross_scene_train": 1,
+          "images_in_cross_scene_val": 1
+        },
+        {
+          "clip": "psota",
+          "source": "psota",
+          "images_in_cross_scene_train": 658,
+          "images_in_cross_scene_val": 75
+        }
+      ]
+    },
+    "main_train__cross_scene_test": {
+      "count": 411,
+      "details": [
+        {
+          "clip": "danuma_004",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_009",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_010",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_012",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_016",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_022",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_023",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_025",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_029",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_033",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_035",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_036",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_037",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_038",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_039",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_041",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_045",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_050",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_058",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_059",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_060",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_061",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_063",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_068",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_070",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_081",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_092",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_095",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_098",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_099",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_100",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1000",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1006",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1011",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1012",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1014",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1023",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1024",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1030",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1031",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_104",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1040",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1049",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1053",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1054",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1060",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1064",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1066",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1068",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_107",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1072",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1074",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1075",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1077",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1078",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_108",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1082",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1084",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1096",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1099",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1103",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1104",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_111",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1111",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1116",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1121",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1123",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1129",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_113",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1130",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1145",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1149",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1154",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1158",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1171",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1179",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_118",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1191",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1195",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1196",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1208",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1210",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1218",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_122",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1220",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1224",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1225",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1229",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1233",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1234",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1236",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1238",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1240",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1242",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1247",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1249",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_125",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1253",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1256",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1257",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_127",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_128",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_138",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1389",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1392",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1393",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1395",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1403",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1409",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1410",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1412",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1416",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1435",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1440",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1445",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1449",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1458",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1459",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1463",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1467",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1469",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1474",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1477",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1480",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1491",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1493",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1494",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1496",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1500",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1502",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1506",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1508",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1510",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1522",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1527",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1528",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1531",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1533",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1537",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1539",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1540",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1541",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_155",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1550",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1551",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_156",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_161",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_163",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_164",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_167",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1679",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1681",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1684",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1685",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1686",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1687",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_169",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1693",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1699",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1702",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_172",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_185",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_186",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_191",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_195",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_197",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_199",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_200",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_202",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_205",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_206",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_208",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_214",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_219",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_221",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_233",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_236",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_243",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_244",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_245",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_246",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_251",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_252",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_253",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_254",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_255",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_257",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_261",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_263",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_274",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_279",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_280",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_285",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_288",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_294",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_303",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_306",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_309",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_318",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_320",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_326",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_328",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_333",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_335",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_336",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_337",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_339",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_340",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_341",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_344",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_352",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_355",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_357",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_368",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_373",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_374",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_375",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_381",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_382",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_385",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_386",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_388",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_397",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_398",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_401",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_402",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_408",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_415",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_417",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_419",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_420",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_430",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_433",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_434",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_435",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_437",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_439",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_441",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_442",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_444",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_446",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_448",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_449",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_451",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_452",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_454",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_455",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_456",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_457",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_459",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_461",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_462",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_469",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_471",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_472",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_478",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_479",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_481",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_483",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_487",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_491",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_494",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_496",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_497",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_499",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_501",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_503",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_513",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_516",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_520",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_521",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_525",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_528",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_534",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_535",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_536",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_537",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_538",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_539",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_543",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_548",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_550",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_551",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_552",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_557",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_559",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_563",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_565",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_566",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_569",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_574",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_576",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_577",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_578",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_583",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_584",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_590",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_592",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_601",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_602",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_604",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_608",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_610",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_613",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_614",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_618",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_621",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_630",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_634",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_640",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_641",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_642",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_651",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_652",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_655",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_657",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_664",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_666",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_668",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_675",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_677",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_687",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_688",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_693",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_697",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_698",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_701",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_704",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_710",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_712",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_719",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_721",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_722",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_724",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_725",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_727",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_729",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_731",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_733",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_734",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_736",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_737",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_738",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_744",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_745",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_746",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_748",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_753",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_754",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_759",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_764",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_770",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_780",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_781",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_783",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_792",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_794",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_796",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_802",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_804",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_806",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_808",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_810",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_813",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_819",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_820",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_822",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_825",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_828",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_838",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_839",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_841",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_842",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_849",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_851",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_852",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_853",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_857",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_858",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_859",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_863",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_867",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_875",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_878",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_882",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_884",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_892",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_894",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_899",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_903",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_905",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_906",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_907",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_916",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_920",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_921",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_923",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_928",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_930",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_932",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_935",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_938",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_947",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_949",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_961",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_962",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_972",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_974",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_980",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_983",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_994",
+          "source": "danuma",
+          "images_in_main_train": 1,
+          "images_in_cross_scene_test": 1
+        }
+      ]
+    },
+    "main_val__cross_scene_test": {
+      "count": 39,
+      "details": [
+        {
+          "clip": "danuma_019",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_069",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1007",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_103",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1045",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1062",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1098",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1126",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1200",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1215",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1231",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1244",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1391",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1422",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_143",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1448",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1475",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1504",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_1525",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_178",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_215",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_284",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_297",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_359",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_365",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_376",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_394",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_473",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_547",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_554",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_596",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_611",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_631",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_691",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_702",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_801",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_887",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_917",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        },
+        {
+          "clip": "danuma_939",
+          "source": "danuma",
+          "images_in_main_val": 1,
+          "images_in_cross_scene_test": 1
+        }
+      ]
+    }
+  },
+  "source_prefix_intersections": {
+    "main_train__main_val": {
+      "shared_sources": [
+        "alameer",
+        "bergamini",
+        "danuma",
+        "psota"
+      ],
+      "count": 4
+    },
+    "main_train__official_test": {
+      "shared_sources": [
+        "danuma"
+      ],
+      "count": 1
+    },
+    "main_val__official_test": {
+      "shared_sources": [
+        "danuma"
+      ],
+      "count": 1
+    },
+    "official_test__cross_scene_test": {
+      "shared_sources": [
+        "danuma"
+      ],
+      "count": 1
+    },
+    "cross_scene_train__cross_scene_test": {
+      "shared_sources": [],
+      "count": 0
+    },
+    "cross_scene_val__cross_scene_test": {
+      "shared_sources": [],
+      "count": 0
+    },
+    "cross_scene_train__cross_scene_val": {
+      "shared_sources": [
+        "alameer",
+        "bergamini",
+        "psota"
+      ],
+      "count": 3
+    },
+    "main_train__cross_scene_test": {
+      "shared_sources": [
+        "danuma"
+      ],
+      "count": 1
+    },
+    "main_val__cross_scene_test": {
+      "shared_sources": [
+        "danuma"
+      ],
+      "count": 1
+    }
+  },
+  "questions": {
+    "Q1_main_train_contains_danuma": {
+      "answer": true,
+      "count": 1319,
+      "note": "Main train contains danuma images, therefore the official 250-image test set (all danuma) is NOT a source-held-out evaluation with respect to main train."
+    },
+    "Q2_official_test_vs_cross_scene_test_overlap": {
+      "image_level_count": 0,
+      "ids": [],
+      "interpretation": "The two danuma test sets share no image file, i.e. the cross-scene test is a different set of danuma images."
+    },
+    "Q3_main_splits_vs_official_test_group_overlap": {
+      "group_rule": "source prefix (danuma/psota/alameer/bergamini) and, where the file name exposes it, a clip key (text before '--', before '_frame_', or with a trailing frame index removed)",
+      "main_train_vs_official_test": {
+        "image_level": 0,
+        "clip_level": 0,
+        "shared_sources": [
+          "danuma"
+        ]
+      },
+      "main_val_vs_official_test": {
+        "image_level": 0,
+        "clip_level": 0,
+        "shared_sources": [
+          "danuma"
+        ]
+      },
+      "interpretation": "Main train/val and the official test share the danuma source group; with the clip rule above no identical clip key is shared, but the danuma subset exposes no frame/video marker, so clip-level disjointness for danuma cannot be established."
+    },
+    "Q4_cross_scene_internal_overlap": {
+      "train_vs_test": {
+        "image_level": 0,
+        "clip_level": 0,
+        "shared_sources": []
+      },
+      "val_vs_test": {
+        "image_level": 0,
+        "clip_level": 0,
+        "shared_sources": []
+      },
+      "interpretation": "Cross-scene train/val use only psota/alameer/bergamini while the cross-scene test is danuma only: the split is source-disjoint at the prefix level and also disjoint at the clip level under the stated rule."
+    }
+  }
+}
