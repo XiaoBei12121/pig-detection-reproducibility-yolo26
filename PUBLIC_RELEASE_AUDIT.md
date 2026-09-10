@@ -4,8 +4,8 @@
 |---|---|
 | Repository | `pig-detection-reproducibility-yolo26` (local; **not yet pushed**) |
 | Repository URL | _to be filled after `git push` — `https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26`_ |
-| Release tag | **v1.0.0** (annotated, points at the release commit below) |
-| Release commit SHA | `14fcf87f54d0988183e7448945447dc5f033bc23` (will be updated if any file changes before pushing) |
+| Release tag | **v1.0.0** (annotated) |
+| Release commit SHA | the commit that tag `v1.0.0` points to — resolve with `git rev-list -n1 v1.0.0` (it is the tip of `main` at freeze time; this file intentionally avoids hard-coding its own SHA) |
 | Experimental audit commit (development repository) | **0f51028** (`git rev-parse HEAD` of the private development repo at freeze time) |
 | Date | 2026-09-09 |
 | License | AGPL-3.0 (files derived from Ultralytics keep their original headers) |
