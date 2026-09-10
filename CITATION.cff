@@ -8,8 +8,8 @@ title: >-
 version: v1.0.0
 date-released: 2026-09-09
 license: AGPL-3.0
-# TODO(authors): replace <USERNAME> with the GitHub account that hosts the repository.
-repository-code: "https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26"
+# TODO(authors): replace XiaoBei12121 with the GitHub account that hosts the repository.
+repository-code: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26"
 type: software
 keywords:
   - pig detection

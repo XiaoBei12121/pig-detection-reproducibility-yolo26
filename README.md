@@ -68,7 +68,7 @@ for the official sources (DOI / portal), the expected local directory layout, an
 ## Installation
 
 ```bash
-git clone https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26.git
+git clone https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26.git
 cd pig-detection-reproducibility-yolo26
 python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt

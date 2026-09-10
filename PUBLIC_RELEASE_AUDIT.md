@@ -3,7 +3,7 @@
 | Item | Value |
 |---|---|
 | Repository | `pig-detection-reproducibility-yolo26` (local; **not yet pushed**) |
-| Repository URL | _to be filled after `git push` — `https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26`_ |
+| Repository URL | _to be filled after `git push` — `https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26`_ |
 | Release tag | **v1.0.0** (annotated) |
 | Release commit SHA | the commit that tag `v1.0.0` points to — resolve with `git rev-list -n1 v1.0.0` (it is the tip of `main` at freeze time; this file intentionally avoids hard-coding its own SHA) |
 | Experimental audit commit (development repository) | **0f51028** (`git rev-parse HEAD` of the private development repo at freeze time) |
@@ -85,11 +85,11 @@
 ```bash
 # after creating an empty public repository named pig-detection-reproducibility-yolo26
 cd pig-detection-reproducibility-yolo26
-git remote add origin https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26.git
+git remote add origin https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26.git
 git branch -M main
 git push -u origin main
 git push origin v1.0.0
 ```
 
 Then create the GitHub Release for tag `v1.0.0` and fill the repository URL / release URL above
-(and the placeholder `<USERNAME>` in `README.md` and `CITATION.cff`).
+(and the placeholder `XiaoBei12121` in `README.md` and `CITATION.cff`).
