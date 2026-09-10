@@ -1,3 +1,5 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+#
 # E6: YOLO26s with the SIoU bounding-box regression loss — structure identical to configs/yolo26s_ca_bifpn.yaml.
 #
 # IMPORTANT: SIoU does not change the network topology. It only replaces the bounding-box
@@ -6,7 +8,6 @@
 # Classification loss, label assignment and all other training logic stay unchanged, and no
 # additional trainable parameters are introduced. See modules/README.md for the exact code path.
 # This explicit config exists so that every run in manifests/ maps to a complete config file.
-## Ultralytics AGPL-3.0 License - https://ultralytics.com/license
 
 # YOLO26s + CA + BiFPN 鈥斺€?E4 瀹為獙閰嶇疆
 # 鍚堝苟 E1锛圕2PSA 鍚庣疆 CoordAtt锛変笌 E2锛圥4/P5 BiFPNAdd 鍔犳潈铻嶅悎锛夛細

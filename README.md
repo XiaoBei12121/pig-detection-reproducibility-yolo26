@@ -2,10 +2,31 @@
 
 **Multi-seed, checkpoint-sensitive, cross-dataset and cross-generation evaluation of lightweight YOLO modifications for pig detection**
 
-This repository is intended to reproduce the experiments and analyses reported in the manuscript.
+This repository is the **reproducibility artifact of a manuscript**, not a "better YOLO" project.
 The main conclusion is **not** that CA+SIoU consistently improves YOLO26s. Instead, the experiments
 evaluate whether small apparent gains remain stable across random seeds, checkpoint-selection
-rules, datasets, and two YOLO generations.
+rules, datasets, and two YOLO generations — and the answer is largely negative.
+
+### Version you should cite
+
+| Reference | Meaning |
+|---|---|
+| **Release `v1.0.1`** | the frozen version cited by the manuscript (author metadata complete) |
+| Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |
+| `main` | development branch, may receive documentation-only updates — do **not** cite it in the paper |
+
+### What can be reproduced without retraining — and what cannot
+
+| Task | Requires | Status |
+|---|---|---|
+| Recompute every statistic (5-seed mean/SD, paired deltas, exhaustive bootstrap CI, exact sign-flip permutation, PigLife best/last, YOLO11s best/last, rank stability) | Python + the files in `results/` | ✅ fully reproducible offline |
+| Regenerate Tables 1–18 and Figures 10–11 | Python + numpy/matplotlib | ✅ fully reproducible offline |
+| Re-evaluate the reported metrics | the trained checkpoints (not redistributed) + the datasets | ⚠️ requires retraining or your own checkpoints |
+| Retrain any run | PigDetect/PigLife data obtained from the providers + `manifests/` + `configs/` | ⚠️ not a one-command reproduction: build the dataset layout, then follow `manifests/*.csv` |
+
+The original images, annotations and trained checkpoints are **not** redistributed — see
+`docs/DATASETS.md` for the official sources. Third-party (Ultralytics-derived) files and their
+licensing are listed in `THIRD_PARTY_NOTICES.md`.
 
 ---
 
