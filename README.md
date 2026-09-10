@@ -32,8 +32,17 @@ licensing are listed in `THIRD_PARTY_NOTICES.md`.
 
 ## Paper
 
-Manuscript: *"… evaluation of lightweight YOLO modifications for pig detection in densely occluded pens"* (in preparation).
-This artifact corresponds to the submission version; see `PUBLIC_RELEASE_AUDIT.md` for the exact release tag and commit.
+**Authors:** Shuo Kang; Lifeng Yin
+
+**Affiliation:**
+School of Rail Transit Intelligent Engineering,
+Dalian Jiaotong University,
+Dalian 116028, Liaoning, China
+
+**Corresponding author:** Lifeng Yin — yinlifeng1030@djtu.edu.cn
+
+Manuscript: *"… evaluation of lightweight YOLO modifications for pig detection in densely occluded pens"* (in preparation; no journal, volume or DOI is asserted).
+The manuscript submission version of this artifact is pinned to release **`v1.0.1`**; see `PUBLIC_RELEASE_AUDIT.md` for the exact release tag and commit of every published version.
 
 ## Overview
 
@@ -195,7 +204,16 @@ Experimental audit snapshot of the development repository: commit `0f51028` (loc
 
 ## Citation
 
-See `CITATION.cff` (author list and repository URL to be completed before publication).
+If you use this artifact, please cite it as described in `CITATION.cff`:
+
+> Kang, S., & Yin, L. (2026). *Reproducibility artifact for lightweight YOLO modifications for pig
+> detection* (version v1.0.1). School of Rail Transit Intelligent Engineering, Dalian Jiaotong
+> University. https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.1
+
+Corresponding author: Lifeng Yin (yinlifeng1030@djtu.edu.cn).
+The associated manuscript is still in preparation, so no bibliographic metadata for it is asserted
+here. When referring to the YOLO26 model itself, cite the official publication (Jocher et al., 2026,
+arXiv:2606.03748) rather than this repository — see `THIRD_PARTY_NOTICES.md`.
 
 ## License
 

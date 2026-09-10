@@ -1,16 +1,22 @@
 cff-version: 1.2.0
-message: >-
-  If you use this reproducibility artifact, please cite the manuscript and this repository.
-  Replace the placeholder author list and repository URL before public release.
-title: >-
-  Reproducibility artifact: multi-seed, checkpoint-sensitive, cross-dataset and
-  cross-generation evaluation of lightweight YOLO modifications for pig detection
-version: v1.0.0
-date-released: 2026-09-09
-license: AGPL-3.0
-# TODO(authors): replace XiaoBei12121 with the GitHub account that hosts the repository.
-repository-code: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26"
+message: "If you use this software, please cite the associated manuscript."
+title: "Reproducibility artifact for lightweight YOLO modifications for pig detection"
 type: software
+version: "1.0.1"
+date-released: "2026-09-10"
+license: "AGPL-3.0-only"
+repository-code: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26"
+url: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.1"
+
+authors:
+  - family-names: "Kang"
+    given-names: "Shuo"
+    affiliation: "School of Rail Transit Intelligent Engineering, Dalian Jiaotong University, Dalian 116028, Liaoning, China"
+
+  - family-names: "Yin"
+    given-names: "Lifeng"
+    affiliation: "School of Rail Transit Intelligent Engineering, Dalian Jiaotong University, Dalian 116028, Liaoning, China"
+
 keywords:
   - pig detection
   - precision livestock farming
@@ -22,14 +28,8 @@ keywords:
   - checkpoint sensitivity
   - cross-dataset validation
   - reproducibility
-# TODO(authors): fill in the manuscript author list before publication.
-authors:
-  - family-names: "TBD"
-    given-names: "TBD"
-# preferred-citation:
-#   type: article
-#   title: "TBD (manuscript title)"
-#   authors:
-#     - family-names: "TBD"
-#   journal: "TBD"
-#   year: 2026
+
+# Manuscript reference
+# The associated manuscript is not published yet; no bibliographic metadata
+# (journal, volume, article number, DOI) is asserted here and none should be inferred.
+# Add a 'preferred-citation' block once the manuscript has a citable record.
