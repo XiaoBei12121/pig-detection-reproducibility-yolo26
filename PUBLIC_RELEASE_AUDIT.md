@@ -4,13 +4,16 @@
 |---|---|
 | Repository | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26 (public) |
 | Repository URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26 |
-| Release URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.0 |
-| Release tag | **v1.0.0** (annotated) |
-| Release commit SHA | the commit that tag `v1.0.0` points to — resolve with `git rev-list -n1 v1.0.0` (it is the tip of `main` at freeze time; this file intentionally avoids hard-coding its own SHA) |
+| **Submission release (cited by the manuscript)** | **`v1.0.1`** (annotated) |
+| Submission release URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.1 |
+| Submission release commit | the commit tagged `v1.0.1` — resolve with `git rev-list -n1 v1.0.1` (author-metadata commit: `41d0f3a`; this audit file intentionally does not hard-code its own final SHA) |
+| First published release (history) | `v1.0.0` (annotated) = `84a7f08` — author metadata was still `TBD`; kept for history, **not** cited by the manuscript |
+| Authors | Shuo Kang; Lifeng Yin — School of Rail Transit Intelligent Engineering, Dalian Jiaotong University, Dalian 116028, Liaoning, China |
+| Corresponding author | Lifeng Yin — yinlifeng1030@djtu.edu.cn |
 | Experimental audit commit (development repository) | **0f51028** (`git rev-parse HEAD` of the private development repo at freeze time) |
-| Date | 2026-09-09 |
-| License | AGPL-3.0 (files derived from Ultralytics keep their original headers) |
-| Tracked files | 125 |
+| Date | 2026-09-10 |
+| License | AGPL-3.0-only (files derived from Ultralytics keep their original headers) |
+| Tracked files | 127 |
 
 ## Included files
 
@@ -81,14 +84,31 @@
 - Hyper-parameters were fixed a priori (CA r = 32; SIoU θ = 4; two local BiFPN-style fusion nodes) and
   were not exhaustively tuned.
 
-## Publication status (completed 2026-09-09)
+## Publication status
 
-- Repository (public): https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26
-- Release: https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.0
-- Release tag: `v1.0.0` (annotated) — release commit resolvable with `git rev-list -n1 v1.0.0` (= `84a7f08`)
-- Upload method: `gh repo create … --public --source … --remote origin --push` followed by
+### Release `v1.0.1` — manuscript submission version (author metadata completed)
+
+- Tag: `v1.0.1` (annotated), published 2026-09-10.
+- Author-metadata commit: `41d0f3a` ("Complete author metadata for manuscript release v1.0.1").
+- Final release commit: the commit tagged `v1.0.1` — resolve with `git rev-list -n1 v1.0.1`
+  (this audit document is updated by a follow-up commit, whose SHA is therefore deliberately not
+  hard-coded here).
+- Release URL: https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.1
+- Authors: Shuo Kang; Lifeng Yin — School of Rail Transit Intelligent Engineering,
+  Dalian Jiaotong University, Dalian 116028, Liaoning, China. Corresponding author: Lifeng Yin
+  (yinlifeng1030@djtu.edu.cn). ORCID iDs are intentionally not asserted.
+- Changes relative to `v1.0.0`: `CITATION.cff` (authors, affiliations, `AGPL-3.0-only` license
+  identifier, `url`, `version`), `README.md` (authors, affiliation, corresponding author, citation
+  guidance), this audit document and the submission checklist.
+- **Unchanged relative to `v1.0.0`**: every file under `results/`, `splits/`, `figures/` and
+  `scripts/` — no experimental value, split list, manifest, figure or statistic was modified, and the
+  raw audit records (`*_raw.json`) are retained.
+
+### Release `v1.0.0` — first publication (history, author metadata was `TBD`)
+
+- Tag: `v1.0.0` (annotated) = `84a7f08`; kept unchanged so the published history stays auditable.
+- Release URL: https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.0
+- Upload method: `gh repo create … --public --source … --remote origin --push`, followed by
   `git push origin v1.0.0` and `gh release create v1.0.0 …` (through the local HTTPS proxy).
 - Commit identity for the public repository: `XiaoBei12121 <XiaoBei12121@users.noreply.github.com>`
   (no personal e-mail is exposed in the git history).
-
-Remaining metadata task: fill the manuscript author list in `CITATION.cff` (currently `TBD`).
