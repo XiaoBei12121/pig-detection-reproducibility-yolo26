@@ -1,0 +1,13 @@
+run_id,model,config,dataset,seed,epochs,imgsz,batch,optimizer,lr0,momentum,checkpoint_rule,best_epoch,val_map50,val_map5095,test_map50,test_map5095,precision,recall,params_m,gflops,result_file
+y11_e0_seed42,YOLO11s,yolo11s (official baseline),PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,83,0.9891,0.8519,0.9817,0.7707,0.9664,0.9367,9.4282,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e0_seed42,YOLO11s,yolo11s (official baseline),PigDetect,42,100,640,4,MuSGD,0.01,0.937,last,83,0.9891,0.8519,0.9773,0.7684,0.9711,0.9395,9.4282,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e1ca_seed42,YOLO11s+CA,configs/yolo11s_ca.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,87,0.9892,0.8547,0.9807,0.7679,0.9671,0.9356,9.4844,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e1ca_seed42,YOLO11s+CA,configs/yolo11s_ca.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,last,87,0.9892,0.8547,0.9759,0.7642,0.9693,0.936,9.4844,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e0_seed1,YOLO11s,yolo11s (official baseline),PigDetect,1,100,640,4,MuSGD,0.01,0.937,best,82,0.9891,0.8522,0.9826,0.7685,0.9708,0.9362,9.4282,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e0_seed1,YOLO11s,yolo11s (official baseline),PigDetect,1,100,640,4,MuSGD,0.01,0.937,last,82,0.9891,0.8522,0.9761,0.7686,0.9675,0.9368,9.4282,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e1ca_seed1,YOLO11s+CA,configs/yolo11s_ca.yaml,PigDetect,1,100,640,4,MuSGD,0.01,0.937,best,89,0.9885,0.854,0.9814,0.7733,0.963,0.94,9.4844,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e1ca_seed1,YOLO11s+CA,configs/yolo11s_ca.yaml,PigDetect,1,100,640,4,MuSGD,0.01,0.937,last,89,0.9885,0.854,0.9764,0.769,0.9692,0.938,9.4844,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e0_seed7,YOLO11s,yolo11s (official baseline),PigDetect,7,100,640,4,MuSGD,0.01,0.937,best,90,0.9883,0.8543,0.9807,0.7724,0.9685,0.9343,9.4282,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e0_seed7,YOLO11s,yolo11s (official baseline),PigDetect,7,100,640,4,MuSGD,0.01,0.937,last,90,0.9883,0.8543,0.9753,0.7681,0.9647,0.9338,9.4282,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e1ca_seed7,YOLO11s+CA,configs/yolo11s_ca.yaml,PigDetect,7,100,640,4,MuSGD,0.01,0.937,best,90,0.9894,0.854,0.9821,0.7719,0.9664,0.9405,9.4844,21.8,results/yolo11_replication/test_audit_20260909.json
+y11_e1ca_seed7,YOLO11s+CA,configs/yolo11s_ca.yaml,PigDetect,7,100,640,4,MuSGD,0.01,0.937,last,90,0.9894,0.854,0.9818,0.7717,0.9649,0.9402,9.4844,21.8,results/yolo11_replication/test_audit_20260909.json

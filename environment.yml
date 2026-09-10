@@ -1,0 +1,28 @@
+# Conda environment mirroring the environment used for the manuscript experiments.
+#
+# Original setup (see docs/ENVIRONMENT.md):
+#   Python 3.10.21 | PyTorch 2.0.1+cu118 | CUDA 11.8 | Ultralytics 8.4.135
+#   GPU: NVIDIA RTX 4050 Laptop GPU (6 GB, CUDA capable)
+#
+# For CUDA 11.8 builds install PyTorch from the dedicated index, e.g.:
+#   pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118
+#
+# The statistics/table regeneration scripts (scripts/analysis/reproduce_statistics.py,
+# reproduce_tables.py, rank_stability.py) do NOT require PyTorch, CUDA or a GPU: they only need
+# the locked result files shipped inside results/. Only training and evaluation need the GPU stack.
+
+name: pigdetect-repro
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - ultralytics==8.4.135
+      - numpy==1.26.4
+      - opencv-python==4.10.0.84
+      - pycocotools>=2.0.7
+      - matplotlib>=3.7
+      # install the CUDA 11.8 PyTorch stack separately (see comment above):
+      # - torch==2.0.1
+      # - torchvision==0.15.2

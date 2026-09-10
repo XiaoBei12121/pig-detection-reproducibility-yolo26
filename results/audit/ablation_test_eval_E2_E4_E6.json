@@ -1,0 +1,32 @@
+[
+  {
+    "run": "E2_BiFPN",
+    "config": "configs/yolo26s_bifpn.yaml",
+    "checkpoint": "results/ablation/E2_BiFPN/weights/best.pt",
+    "split": "PigDetect exploratory test (250 images)",
+    "P": 0.9588,
+    "R": 0.9303,
+    "mAP50": 0.9729,
+    "mAP50-95": 0.7714
+  },
+  {
+    "run": "E4_CA_BiFPN",
+    "config": "configs/yolo26s_ca_bifpn.yaml",
+    "checkpoint": "results/ablation/E4_CA_BiFPN/weights/best.pt",
+    "split": "PigDetect exploratory test (250 images)",
+    "P": 0.9622,
+    "R": 0.9229,
+    "mAP50": 0.9776,
+    "mAP50-95": 0.7757
+  },
+  {
+    "run": "E6_Ours",
+    "config": "configs/yolo26s_ca_bifpn_siou.yaml",
+    "checkpoint": "results/ablation/E6_Ours/weights/best.pt",
+    "split": "PigDetect exploratory test (250 images)",
+    "P": 0.9662,
+    "R": 0.9215,
+    "mAP50": 0.9783,
+    "mAP50-95": 0.7734
+  }
+]

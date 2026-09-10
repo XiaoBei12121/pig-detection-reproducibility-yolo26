@@ -1,0 +1,4 @@
+# source: results/statistics/piglife_test_best.json + piglife_test_last.json
+rule,E0_mean,E5_mean,mean_delta,per_seed_delta
+best.pt,0.8841,0.8682,-0.0158,"[-0.0021, -0.0218, -0.0236]"
+last.pt,0.8882,0.8884,0.0002,"[0.0013, 0.0008, -0.0015]"

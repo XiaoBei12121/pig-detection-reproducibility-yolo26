@@ -1,0 +1,9 @@
+# compiled from the tables above; CI/p recomputed by scripts/analysis/*.py
+aspect,pigdetect,piglife,interpretation
+E5 vs E0 (PigDetect 5-seed),"+0.0029, CI [-0.00048, 0.00628], p=0.3125",best -0.0158 / last +0.0002,no stable gain
+E1 vs E0 (seed42),0.7744 vs 0.7747,0.8747 vs 0.8855,no consistent gain
+E3 vs E0 (seed42),0.7755 vs 0.7747,0.8736 vs 0.8855,flat / lower
+E2 vs E0 (seed42),0.771 vs 0.775,0.8674 vs 0.8855 (last 0.8823 vs 0.8882),negative trade-off reproduced
+high occlusion,E5 not better than E0,E5 not better than E0,consistent failure mode
+target scale @640,width/height/area medians close to PigLife,close to PigDetect,scale mismatch not supported
+objects per image (median),22 (official test),12,composition differs

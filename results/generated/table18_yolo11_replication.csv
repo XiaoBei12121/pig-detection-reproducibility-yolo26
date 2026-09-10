@@ -1,0 +1,6 @@
+# source: results/yolo11_replication/test_audit_20260909.json
+seed,baseline_best,CA_best,delta_best,baseline_last,CA_last,delta_last
+42,0.7707,0.7679,-0.0028,0.7684,0.7642,-0.0042
+1,0.7685,0.7733,0.0048,0.7686,0.769,0.0004
+7,0.7724,0.7719,-0.0005,0.7681,0.7717,0.0036
+mean+-SD,-,-,+0.0005,-,-,-0.0001

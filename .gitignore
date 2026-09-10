@@ -1,0 +1,46 @@
+# Datasets — NOT redistributed in this repository
+data/
+datasets/
+images/
+labels/
+
+# Model weights & exported models
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+*.tflite
+*.mlmodel
+
+# Training outputs / experiment dumps (kept locally, listed in manifests/ instead)
+runs/
+wandb/
+*.cache
+args.yaml
+
+# Archives (local backups)
+archives/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp

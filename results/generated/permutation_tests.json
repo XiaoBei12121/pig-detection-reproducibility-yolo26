@@ -1,0 +1,69 @@
+{
+  "pigdetect_E5_minus_E0": {
+    "mean_delta": 0.0029,
+    "sd_delta": 0.0044,
+    "per_seed_delta": [
+      0.0059,
+      -0.0014,
+      -0.0009,
+      0.0087,
+      0.0022
+    ],
+    "configurations": 32,
+    "p_two_sided": 0.3125,
+    "p_one_sided": 0.1562,
+    "min_attainable_two_sided_p": 0.0625
+  },
+  "piglife_E5_minus_E0_best": {
+    "mean_delta": -0.0158,
+    "sd_delta": 0.0119,
+    "per_seed_delta": [
+      -0.0021,
+      -0.0218,
+      -0.0236
+    ],
+    "configurations": 8,
+    "p_two_sided": 0.25,
+    "p_one_sided": 0.125,
+    "min_attainable_two_sided_p": 0.25
+  },
+  "piglife_E5_minus_E0_last": {
+    "mean_delta": 0.0002,
+    "sd_delta": 0.0015,
+    "per_seed_delta": [
+      0.0013,
+      0.0008,
+      -0.0015
+    ],
+    "configurations": 8,
+    "p_two_sided": 1.0,
+    "p_one_sided": 0.5,
+    "min_attainable_two_sided_p": 0.25
+  },
+  "yolo11_CA_minus_baseline_best": {
+    "mean_delta": 0.0005,
+    "sd_delta": 0.0039,
+    "per_seed_delta": [
+      -0.0028,
+      0.0048,
+      -0.0005
+    ],
+    "configurations": 8,
+    "p_two_sided": 1.0,
+    "p_one_sided": 0.5,
+    "min_attainable_two_sided_p": 0.25
+  },
+  "yolo11_CA_minus_baseline_last": {
+    "mean_delta": -0.0001,
+    "sd_delta": 0.0039,
+    "per_seed_delta": [
+      -0.0042,
+      0.0004,
+      0.0036
+    ],
+    "configurations": 8,
+    "p_two_sided": 1.0,
+    "p_one_sided": 0.5,
+    "min_attainable_two_sided_p": 0.25
+  }
+}

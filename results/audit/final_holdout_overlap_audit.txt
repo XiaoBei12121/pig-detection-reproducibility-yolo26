@@ -1,0 +1,27 @@
+== counts ==
+dev        2681
+train      2411
+val        270
+test       250
+ft_train   2226
+ft_val     251
+ft_final   204
+
+== overlap checks ==
+ft_final   ∩ ft_train   = 0
+ft_final   ∩ ft_val     = 0
+ft_final   ∩ test       = 0
+ft_final   ∩ train      = 186
+ft_final   ∩ val        = 18
+dev        ∩ test       = 0
+ft_train   ∩ train      = 1995
+ft_val     ∩ val        = 21
+
+== ft_final scene prefixes ==
+alameer    10
+bergamini  21
+danuma     132
+psota      41
+
+== main test scene prefixes ==
+danuma     250

@@ -1,0 +1,13 @@
+model,precision,run1_fps,run2_fps,run3_fps,mean_fps,sd_fps,protocol
+YOLOv8s,FP32,75.6,76.1,72.0,74.6,2.26,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+YOLOv8s,FP16,71.0,66.5,69.9,69.1,2.36,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+YOLO11s,FP32,61.2,58.3,52.8,57.4,4.26,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+YOLO11s,FP16,51.3,47.9,50.8,50.0,1.82,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E0-YOLO26s,FP32,51.1,51.0,53.1,51.8,1.17,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E0-YOLO26s,FP16,37.9,55.8,55.5,49.7,10.26,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E5-CA-SIoU,FP32,58.5,57.6,57.5,57.9,0.52,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E5-CA-SIoU,FP16,49.4,54.9,56.1,53.5,3.55,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E2-BiFPN-style,FP32,57.4,59.6,55.6,57.5,2.00,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E2-BiFPN-style,FP16,51.5,52.4,53.9,52.6,1.19,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=80;cuda-synchronized;no-IO
+E0-YOLO26s,FP32,session1-single-measurement-60.4,,,,,,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=100;different-session
+E5-CA-SIoU,FP32,session1-single-measurement-56.2,,,,,,RTX4050-Laptop;imgsz=640;batch=1;python-predict-API;warmup=20;iters=100;different-session

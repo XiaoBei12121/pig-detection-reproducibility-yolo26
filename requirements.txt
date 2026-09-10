@@ -1,0 +1,16 @@
+# Core dependencies for the reproducibility artifact.
+#
+# This file lists the packages that matter for reproducing the reported experiments.
+# The full frozen environment captured at submission time is in requirements_full.txt.
+#
+# NOTE: the original experiments were run inside a conda environment ("pig_exp") with
+# Python 3.10.21, PyTorch 2.0.1+cu118 (CUDA 11.8) and Ultralytics 8.4.135 on an
+# NVIDIA RTX 4050 Laptop GPU (6 GB). See docs/ENVIRONMENT.md.
+
+ultralytics==8.4.135
+torch==2.0.1
+torchvision==0.15.2
+numpy==1.26.4
+opencv-python==4.10.0.84
+pycocotools>=2.0.7
+matplotlib>=3.7

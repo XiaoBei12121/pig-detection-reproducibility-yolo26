@@ -1,0 +1,37 @@
+{
+ "distribution": {
+  "High": 2336,
+  "Low": 1715,
+  "Medium": 1385
+ },
+ "models": {
+  "E0": {
+   "Low": {
+    "total": 1715,
+    "recall": 0.9971
+   },
+   "Medium": {
+    "total": 1385,
+    "recall": 0.9949
+   },
+   "High": {
+    "total": 2336,
+    "recall": 0.9867
+   }
+  },
+  "E5": {
+   "Low": {
+    "total": 1715,
+    "recall": 0.9977
+   },
+   "Medium": {
+    "total": 1385,
+    "recall": 0.9949
+   },
+   "High": {
+    "total": 2336,
+    "recall": 0.9893
+   }
+  }
+ }
+}

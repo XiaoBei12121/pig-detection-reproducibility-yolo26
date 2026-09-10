@@ -1,0 +1,6 @@
+# source: manifests/runs_pigdetect.csv (dataset=PigDetect-ft); see docs/DATASETS.md for holdout scope
+metric,E0_ft,E5_ft,delta
+mAP50,0.986,0.984,-0.002
+mAP50-95,0.855,0.855,0.0
+precision,0.974,0.969,-0.005
+recall,0.951,0.948,-0.003

@@ -1,0 +1,232 @@
+{
+  "pigdetect_multiseed": {
+    "E0": {
+      "per_seed": {
+        "42": 0.7747,
+        "1": 0.7739,
+        "7": 0.7768,
+        "21": 0.7683,
+        "100": 0.7724
+      },
+      "mean": 0.7732,
+      "sd": 0.0032,
+      "n": 5
+    },
+    "E1": {
+      "per_seed": {
+        "42": 0.7744,
+        "1": 0.7774,
+        "7": 0.779
+      },
+      "mean": 0.7769,
+      "sd": 0.0023,
+      "n": 3
+    },
+    "E3": {
+      "per_seed": {
+        "42": 0.7755,
+        "1": 0.7748,
+        "7": 0.7728
+      },
+      "mean": 0.7744,
+      "sd": 0.0014,
+      "n": 3
+    },
+    "E5": {
+      "per_seed": {
+        "42": 0.7806,
+        "1": 0.7725,
+        "7": 0.7759,
+        "21": 0.777,
+        "100": 0.7746
+      },
+      "mean": 0.7761,
+      "sd": 0.003,
+      "n": 5
+    },
+    "E5_minus_E0": {
+      "seeds": [
+        "42",
+        "1",
+        "7",
+        "21",
+        "100"
+      ],
+      "per_seed_delta": [
+        0.0059,
+        -0.0014,
+        -0.0009,
+        0.0087,
+        0.0022
+      ],
+      "mean_delta": 0.0029,
+      "sd_delta": 0.0044,
+      "bootstrap_ci95": [
+        -0.00048,
+        0.00628
+      ],
+      "bootstrap_resamples": 3125,
+      "signflip_p_two_sided": 0.3125,
+      "signflip_p_one_sided": 0.1562,
+      "signflip_configurations": 32,
+      "cohens_dz_exploratory": 0.67
+    }
+  },
+  "piglife_best_last": {
+    "checkpoint_rules": {
+      "best": {
+        "E0_per_seed": [
+          0.8855,
+          0.8805,
+          0.8862
+        ],
+        "E5_per_seed": [
+          0.8834,
+          0.8587,
+          0.8626
+        ],
+        "E0_mean": 0.8841,
+        "E0_sd": 0.0031,
+        "E5_mean": 0.8682,
+        "E5_sd": 0.0133,
+        "per_seed_delta": [
+          -0.0021,
+          -0.0218,
+          -0.0236
+        ],
+        "mean_delta": -0.0158,
+        "sd_delta": 0.0119,
+        "signflip_p_two_sided": 0.25,
+        "signflip_configurations": 8
+      },
+      "last": {
+        "E0_per_seed": [
+          0.8867,
+          0.8898,
+          0.8882
+        ],
+        "E5_per_seed": [
+          0.888,
+          0.8906,
+          0.8867
+        ],
+        "E0_mean": 0.8882,
+        "E0_sd": 0.0016,
+        "E5_mean": 0.8884,
+        "E5_sd": 0.002,
+        "per_seed_delta": [
+          0.0013,
+          0.0008,
+          -0.0015
+        ],
+        "mean_delta": 0.0002,
+        "sd_delta": 0.0015,
+        "signflip_p_two_sided": 1.0,
+        "signflip_configurations": 8
+      }
+    },
+    "single_module_seed42": {
+      "E1": 0.8747,
+      "E2": 0.8674,
+      "E3": 0.8736,
+      "E0": 0.8855,
+      "E2_last": 0.8823
+    }
+  },
+  "yolo11_replication": {
+    "per_seed": {
+      "42": {
+        "base_best": 0.7707,
+        "ca_best": 0.7679,
+        "base_last": 0.7684,
+        "ca_last": 0.7642
+      },
+      "1": {
+        "base_best": 0.7685,
+        "ca_best": 0.7733,
+        "base_last": 0.7686,
+        "ca_last": 0.769
+      },
+      "7": {
+        "base_best": 0.7724,
+        "ca_best": 0.7719,
+        "base_last": 0.7681,
+        "ca_last": 0.7717
+      }
+    },
+    "best": {
+      "per_seed_delta": [
+        -0.0028,
+        0.0048,
+        -0.0005
+      ],
+      "mean_delta": 0.0005,
+      "sd_delta": 0.0039,
+      "signflip_p_two_sided": 1.0,
+      "signflip_configurations": 8,
+      "positive_directions": 1
+    },
+    "last": {
+      "per_seed_delta": [
+        -0.0042,
+        0.0004,
+        0.0036
+      ],
+      "mean_delta": -0.0001,
+      "sd_delta": 0.0039,
+      "signflip_p_two_sided": 1.0,
+      "signflip_configurations": 8,
+      "positive_directions": 2
+    },
+    "rank_flip": {
+      "42": "no_flip",
+      "1": "no_flip",
+      "7": "flip"
+    }
+  },
+  "rank_stability_pigdetect": {
+    "order_per_seed": {
+      "42": [
+        "E5",
+        "E3",
+        "E0",
+        "E1"
+      ],
+      "1": [
+        "E1",
+        "E3",
+        "E0",
+        "E5"
+      ],
+      "7": [
+        "E1",
+        "E0",
+        "E5",
+        "E3"
+      ]
+    },
+    "mean_rank": {
+      "E0": 2.667,
+      "E1": 2,
+      "E3": 2.667,
+      "E5": 2.667
+    },
+    "rank_sd": {
+      "E0": 0.577,
+      "E1": 1.732,
+      "E3": 1.155,
+      "E5": 1.528
+    },
+    "rank1_count": {
+      "E0": 0,
+      "E1": 2,
+      "E3": 0,
+      "E5": 1
+    },
+    "spearman": {
+      "42_vs_1": -0.8,
+      "42_vs_7": -0.8,
+      "1_vs_7": 0.4
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "run": "E1_CA_fair_seed42",
+  "checkpoint": "results/ablation/E1_CA_fair/weights/best.pt (development repository)",
+  "config": "configs/yolo26s_ca.yaml",
+  "note": "Fair-comparison run used for the manuscript multi-seed statistic (E1, seed 42): same weight-alignment initialisation as the other variants. The earlier config-trained E1 run measured 0.7451 and is not used.",
+  "split": "PigDetect exploratory test (250 images)",
+  "P": 0.9644,
+  "R": 0.9367,
+  "mAP50": 0.9753,
+  "mAP50-95": 0.7744
+}

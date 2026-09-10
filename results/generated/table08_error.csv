@@ -1,0 +1,4 @@
+"# source: results/error_analysis/error_analysis_conf025.json (conf>=0.25, IoU>=0.5)"
+model,edge_miss,stack_miss,normal_miss,total_miss,miss_pct,fp
+YOLO26s,48/307,109/1202,113/3927,270,4.97,343
+YOLO26s-CA-SIoU,41/307,112/1202,110/3927,263,4.84,299

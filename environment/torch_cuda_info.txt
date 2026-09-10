@@ -1,0 +1,1 @@
+2.0.1+cu118 11.8 NVIDIA GeForce RTX 4050 Laptop GPU

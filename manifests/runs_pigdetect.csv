@@ -1,0 +1,28 @@
+run_id,model,config,dataset,seed,epochs,imgsz,batch,optimizer,lr0,momentum,checkpoint_rule,best_epoch,val_map50,val_map5095,test_map50,test_map5095,precision,recall,params_m,gflops,result_file
+E0_seed42,E0,configs/yolo26s_baseline.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9879,0.858,0.9803,0.7747,0.9638,0.9313,9.9486,22.7,results/audit/ (see notes column)
+E1_seed42,E1,configs/yolo26s_ca.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,85,0.9881,0.8561,0.9753,0.7744,0.9644,0.9367,9.9743,22.7,results/audit/ (see notes column)
+E2_seed42,E2,configs/yolo26s_bifpn.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,89,0.9874,0.8544,0.9729,0.7714,0.9588,0.9303,13.474,27.3,results/audit/ (see notes column)
+E3_seed42,E3,configs/yolo26s_siou.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,86,0.9875,0.8556,0.9741,0.7755,0.9627,0.9266,9.949,22.7,results/audit/ (see notes column)
+E4_seed42,E4,configs/yolo26s_ca_bifpn.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9863,0.8536,0.9776,0.7757,0.9622,0.9229,13.499,27.3,results/audit/ (see notes column)
+E5_seed42,E5,configs/yolo26s_ca_siou.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9886,0.8579,0.9826,0.7806,0.9698,0.9382,9.9743,22.7,results/audit/ (see notes column)
+E6_seed42,E6,configs/yolo26s_ca_bifpn_siou.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,85,0.9872,0.8567,0.9783,0.7734,0.9662,0.9215,13.499,27.3,results/audit/ (see notes column)
+E0_seed1,E0,configs/yolo26s_baseline.yaml,PigDetect,1,100,640,4,MuSGD,0.01,0.937,best,89,0.9862,0.8545,0.979,0.7739,0.9579,0.9336,9.9486,22.7,results/statistics/multiseed_pigdetect.json
+E0_seed7,E0,configs/yolo26s_baseline.yaml,PigDetect,7,100,640,4,MuSGD,0.01,0.937,best,88,0.9872,0.8568,0.9761,0.7768,0.9734,0.9291,9.9486,22.7,results/statistics/multiseed_pigdetect.json
+E0_seed21,E0,configs/yolo26s_baseline.yaml,PigDetect,21,100,640,4,MuSGD,0.01,0.937,best,74,0.9867,0.8526,0.9712,0.7683,0.9583,0.9249,9.9486,22.7,results/statistics/multiseed_pigdetect.json
+E0_seed100,E0,configs/yolo26s_baseline.yaml,PigDetect,100,100,640,4,MuSGD,0.01,0.937,best,97,0.986,0.8551,0.9779,0.7724,0.9571,0.9305,9.9486,22.7,results/statistics/multiseed_pigdetect.json
+E1_seed1,E1,configs/yolo26s_ca.yaml,PigDetect,1,100,640,4,MuSGD,0.01,0.937,best,89,0.9866,0.8588,0.9794,0.7774,0.97,0.9323,9.9743,22.7,results/statistics/multiseed_pigdetect.json
+E1_seed7,E1,configs/yolo26s_ca.yaml,PigDetect,7,100,640,4,MuSGD,0.01,0.937,best,90,0.9884,0.8556,0.9804,0.779,0.9735,0.931,9.9743,22.7,results/statistics/multiseed_pigdetect.json
+E3_seed1,E3,configs/yolo26s_siou.yaml,PigDetect,1,100,640,4,MuSGD,0.01,0.937,best,90,0.9881,0.8555,0.9745,0.7748,0.964,0.9311,9.949,22.7,results/statistics/multiseed_pigdetect.json
+E3_seed7,E3,configs/yolo26s_siou.yaml,PigDetect,7,100,640,4,MuSGD,0.01,0.937,best,89,0.9877,0.8565,0.9742,0.7728,0.9694,0.9297,9.949,22.7,results/statistics/multiseed_pigdetect.json
+E5_seed1,E5,configs/yolo26s_ca_siou.yaml,PigDetect,1,100,640,4,MuSGD,0.01,0.937,best,88,0.9859,0.8564,0.9792,0.7725,0.9671,0.9308,9.9743,22.7,results/statistics/multiseed_pigdetect.json
+E5_seed7,E5,configs/yolo26s_ca_siou.yaml,PigDetect,7,100,640,4,MuSGD,0.01,0.937,best,88,0.9869,0.8584,0.9759,0.7759,0.9635,0.9378,9.9743,22.7,results/statistics/multiseed_pigdetect.json
+E5_seed21,E5,configs/yolo26s_ca_siou.yaml,PigDetect,21,100,640,4,MuSGD,0.01,0.937,best,100,0.9865,0.8553,0.9756,0.777,0.9707,0.9379,9.9743,22.7,results/statistics/multiseed_pigdetect.json
+E5_seed100,E5,configs/yolo26s_ca_siou.yaml,PigDetect,100,100,640,4,MuSGD,0.01,0.937,best,98,0.9872,0.8582,0.9749,0.7746,0.9675,0.9301,9.9743,22.7,results/statistics/multiseed_pigdetect.json
+E0_rep2_seed42,E0,configs/yolo26s_baseline.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9879,0.858,0.9803,0.7747,0.9638,0.9313,9.9486,22.7,identical to seed42 run (deterministic rerun)
+E0_rep3_seed42,E0,configs/yolo26s_baseline.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9879,0.858,0.9803,0.7747,0.9638,0.9313,9.9486,22.7,identical to seed42 run (deterministic rerun)
+E5_rep2_seed42,E5,configs/yolo26s_ca_siou.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9886,0.8579,0.9826,0.7806,0.9698,0.9382,9.9743,22.7,identical to seed42 run (deterministic rerun)
+E5_rep3_seed42,E5,configs/yolo26s_ca_siou.yaml,PigDetect,42,100,640,4,MuSGD,0.01,0.937,best,90,0.9886,0.8579,0.9826,0.7806,0.9698,0.9382,9.9743,22.7,identical to seed42 run (deterministic rerun)
+E0_ft_seed42,E0,configs/yolo26s_baseline.yaml,PigDetect-ft,42,100,640,4,MuSGD,0.01,0.937,best,100,0.9871,0.8506,0.986,0.855,0.974,0.951,9.9486,22.7,results/audit/ (final-protocol report: E0_ft_final_report.md)
+E5_ft_seed42,E5,configs/yolo26s_ca_siou.yaml,PigDetect-ft,42,100,640,4,MuSGD,0.01,0.937,best,87,0.9879,0.8547,0.984,0.855,0.969,0.948,9.9743,22.7,results/audit/ (final-protocol report: E5_ft_final_report.md)
+E0_cs_seed42,E0,configs/yolo26s_baseline.yaml,PigDetect_cs,42,100,640,4,MuSGD,0.01,0.937,best,84,0.9787,0.823,0.957,0.798,0.941,0.9124,9.9486,22.7,results/cross_scene/cross_scene_eval.json
+E5_cs_seed42,E5,configs/yolo26s_ca_siou.yaml,PigDetect_cs,42,100,640,4,MuSGD,0.01,0.937,best,82,0.975,0.8242,0.9554,0.7947,0.9394,0.9072,9.9743,22.7,results/cross_scene/cross_scene_eval.json

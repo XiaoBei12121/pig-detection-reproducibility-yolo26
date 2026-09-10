@@ -1,0 +1,6 @@
+# metrics: results/audit/recheck_ultralytics_20260909.json; FPS deliberately excluded (see supplementary/)
+model,params_m,gflops,mAP50,mAP50-95,precision,recall
+YOLOv8s,11.136,28.8,0.9779,0.7708,0.9694,0.9417
+YOLO11s,9.4282,21.8,0.9817,0.7707,0.9664,0.9367
+YOLO26s,9.9486,22.7,0.9803,0.7747,0.9638,0.9313
+YOLO26s-CA-SIoU,9.9743,22.7,0.9826,0.7806,0.9698,0.9382

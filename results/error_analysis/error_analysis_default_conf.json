@@ -1,0 +1,24 @@
+{
+ "E0": {
+  "total_gt": 5436,
+  "miss": 43,
+  "false_pos": 11251,
+  "edge_gt": 307,
+  "edge_miss": 3,
+  "stack_gt": 1202,
+  "stack_miss": 15,
+  "normal_gt": 3927,
+  "normal_miss": 25
+ },
+ "E5": {
+  "total_gt": 5436,
+  "miss": 36,
+  "false_pos": 9349,
+  "edge_gt": 307,
+  "edge_miss": 3,
+  "stack_gt": 1202,
+  "stack_miss": 13,
+  "normal_gt": 3927,
+  "normal_miss": 20
+ }
+}

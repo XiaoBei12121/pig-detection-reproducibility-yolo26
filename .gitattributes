@@ -1,0 +1,19 @@
+# Normalise line endings for text files, keep binary assets untouched.
+* text=auto eol=lf
+
+*.py    text eol=lf
+*.md    text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.json  text eol=lf
+*.csv   text eol=lf
+*.txt   text eol=lf
+*.cff   text eol=lf
+
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.pdf   binary
+
+# Mark generated analysis outputs so they are never treated as source
+results/generated/** linguist-generated=true

@@ -1,0 +1,70 @@
+{
+  "pigdetect_rank_order": {
+    "42": [
+      "E5",
+      "E3",
+      "E0",
+      "E1"
+    ],
+    "1": [
+      "E1",
+      "E3",
+      "E0",
+      "E5"
+    ],
+    "7": [
+      "E1",
+      "E0",
+      "E5",
+      "E3"
+    ]
+  },
+  "pigdetect_mean_rank": {
+    "E0": 2.667,
+    "E1": 2,
+    "E3": 2.667,
+    "E5": 2.667
+  },
+  "pigdetect_rank_sd": {
+    "E0": 0.577,
+    "E1": 1.732,
+    "E3": 1.155,
+    "E5": 1.528
+  },
+  "pigdetect_rank1_count": {
+    "E0": 0,
+    "E1": 2,
+    "E3": 0,
+    "E5": 1
+  },
+  "pigdetect_spearman": {
+    "42_vs_1": -0.8,
+    "42_vs_7": -0.8,
+    "1_vs_7": 0.4
+  },
+  "yolo11_best_vs_last": {
+    "42": {
+      "best_winner": "baseline",
+      "last_winner": "baseline",
+      "flip": false,
+      "delta_best": -0.0028,
+      "delta_last": -0.0042
+    },
+    "1": {
+      "best_winner": "+CA",
+      "last_winner": "+CA",
+      "flip": false,
+      "delta_best": 0.0048,
+      "delta_last": 0.0004
+    },
+    "7": {
+      "best_winner": "baseline",
+      "last_winner": "+CA",
+      "flip": true,
+      "delta_best": -0.0005,
+      "delta_last": 0.0036
+    }
+  },
+  "yolo11_flip_count": 1,
+  "note": "Only 4 models and 3 common seeds are available for the YOLO26s ranking and only 2 arms for YOLO11s; Spearman coefficients and flip counts are descriptive only."
+}

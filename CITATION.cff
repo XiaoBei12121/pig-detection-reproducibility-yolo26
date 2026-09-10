@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: >-
+  If you use this reproducibility artifact, please cite the manuscript and this repository.
+  Replace the placeholder author list and repository URL before public release.
+title: >-
+  Reproducibility artifact: multi-seed, checkpoint-sensitive, cross-dataset and
+  cross-generation evaluation of lightweight YOLO modifications for pig detection
+version: v1.0.0
+date-released: 2026-09-09
+license: AGPL-3.0
+# TODO(authors): replace <USERNAME> with the GitHub account that hosts the repository.
+repository-code: "https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26"
+type: software
+keywords:
+  - pig detection
+  - precision livestock farming
+  - YOLO26s
+  - YOLO11s
+  - coordinate attention
+  - SIoU
+  - multi-seed evaluation
+  - checkpoint sensitivity
+  - cross-dataset validation
+  - reproducibility
+# TODO(authors): fill in the manuscript author list before publication.
+authors:
+  - family-names: "TBD"
+    given-names: "TBD"
+# preferred-citation:
+#   type: article
+#   title: "TBD (manuscript title)"
+#   authors:
+#     - family-names: "TBD"
+#   journal: "TBD"
+#   year: 2026

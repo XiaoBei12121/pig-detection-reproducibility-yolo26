@@ -1,0 +1,4 @@
+# source: results/cross_scene/cross_scene_eval.json + results/audit/recheck_ultralytics_20260909.json
+model,in_domain_mAP50,in_domain_mAP5095,danuma_mAP50,danuma_mAP5095
+YOLO26s,0.9803,0.7747,0.957,0.798
+YOLO26s-CA-SIoU,0.9826,0.7806,0.9554,0.7947

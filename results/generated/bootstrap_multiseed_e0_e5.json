@@ -1,0 +1,30 @@
+{
+  "comparison": "E5 - E0",
+  "metric": "mAP@0.5:0.95 (PigDetect exploratory test, 250 images)",
+  "seeds": [
+    "42",
+    "1",
+    "7",
+    "21",
+    "100"
+  ],
+  "per_seed_delta": [
+    0.0059,
+    -0.0014,
+    -0.0009,
+    0.0087,
+    0.0022
+  ],
+  "mean_delta": 0.0029,
+  "sd_delta": 0.0044,
+  "bootstrap": {
+    "method": "exhaustive paired bootstrap, percentile CI, all n**n ordered resamples",
+    "resamples": 3125,
+    "ci_level": 0.95,
+    "ci_low": -0.00048,
+    "ci_high": 0.00628,
+    "contains_zero": true
+  },
+  "cohens_dz_exploratory": 0.67,
+  "note": "n = 5 is small: the interval quantifies uncertainty about a stable positive gain and must not be read as evidence that the two models are equivalent."
+}

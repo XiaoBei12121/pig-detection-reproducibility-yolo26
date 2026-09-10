@@ -1,0 +1,7 @@
+# transcribed from results/statistics/bbox640_distribution.md (PigDetect official 250-image danuma test)
+metric,pigdetect_median,piglife_median,wasserstein,ks_D
+bbox width / 640,0.0913,0.0932,0.0066,0.069
+bbox height / 640,0.1043,0.1083,0.0242,0.148
+bbox area / 640^2,0.009,0.0103,0.0055,0.187
+aspect ratio,0.8229,0.7717,0.1603,0.081
+pigs per image (median),22,12,,

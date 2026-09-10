@@ -1,0 +1,184 @@
+# Reproducibility Artifact
+
+**Multi-seed, checkpoint-sensitive, cross-dataset and cross-generation evaluation of lightweight YOLO modifications for pig detection**
+
+This repository is intended to reproduce the experiments and analyses reported in the manuscript.
+The main conclusion is **not** that CA+SIoU consistently improves YOLO26s. Instead, the experiments
+evaluate whether small apparent gains remain stable across random seeds, checkpoint-selection
+rules, datasets, and two YOLO generations.
+
+---
+
+## Paper
+
+Manuscript: *"… evaluation of lightweight YOLO modifications for pig detection in densely occluded pens"* (in preparation).
+This artifact corresponds to the submission version; see `PUBLIC_RELEASE_AUDIT.md` for the exact release tag and commit.
+
+## Overview
+
+We evaluate three commonly used lightweight modifications on YOLO26s:
+
+- **CA** — Coordinate Attention inserted after the backbone C2PSA block (P5/32)
+- **SIoU** — bounding-box regression loss (`YOLO_SIOU=1`, no topology change)
+- **BiFPN-style** — local learnable weighted fusion replacing two bottom-up Concat nodes of the YOLO26s neck
+
+Protocol: 7 ablations on PigDetect (E0–E6), 5 seeds for E0/E5, 3 seeds for E1/E3, a second dataset
+(PigLife), a final-protocol held-out split, and a cross-generation replication on YOLO11s
+(baseline vs +CA, 3 seeds). All test evaluations use the same frozen splits and the same evaluation
+protocol; the test split is never queried per epoch.
+
+## Main finding
+
+| Evaluation axis | Result |
+|---|---|
+| PigDetect, 5 matched seeds (E5−E0, mAP@0.5:0.95) | mean **+0.0029**; exhaustive paired bootstrap (5⁵=3125) 95% CI **[−0.00048, 0.00628]**; exact sign-flip permutation (2⁵=32) two-sided **p = 0.3125** |
+| PigLife, 3 seeds | validation-best rule: E0 **0.8841±0.0031** vs E5 **0.8682±0.0133**; fixed-end `last.pt` rule: **0.8882 vs 0.8884** → ranking is checkpoint-rule sensitive |
+| YOLO11s replication, 3 seeds (CA − baseline) | best.pt **+0.0005±0.0039**, last.pt **−0.0001±0.0039**, 1/3 seeds show a best↔last rank flip |
+| BiFPN-style fusion | negative accuracy–complexity trade-off on **both** datasets (+35.4% params, +4.6 GFLOPs, no accuracy gain) |
+| Occlusion / overlap | the weakest condition on both datasets; CA+SIoU did not improve the high-overlap group |
+| Runtime (FPS) | **not** used to rank models: repeated laptop-GPU measurements varied by >10% across sessions and reversed the E0/E5 ordering (see `supplementary/`) |
+
+## Repository structure
+
+```
+configs/        YOLO26s / YOLO11s model configurations (E0–E6 + cross-generation)
+modules/        CA, BiFPN-style fusion, SIoU loss — source files and change description
+scripts/        data preparation, training, evaluation, analysis and figure/table generation
+splits/         exact image lists (relative names only) for every split used in the paper
+manifests/      one row per run: config, seed, hyper-parameters, metrics, result file
+results/        locked result files (tables, statistics, cross-scene, error/occlusion analysis, audit)
+figures/        manuscript figures
+docs/           REPRODUCIBILITY / DATASETS / EXPERIMENT_MATRIX / RESULTS_TRACEABILITY / ENVIRONMENT
+supplementary/  runtime (FPS) measurements and notes
+```
+
+## Environment
+
+Python 3.10.21 · PyTorch 2.0.1+cu118 · CUDA 11.8 · Ultralytics 8.4.135 · NVIDIA RTX 4050 Laptop GPU (6 GB).
+See `docs/ENVIRONMENT.md`; core packages in `requirements.txt`, full snapshot in `requirements_full.txt`.
+
+> The statistics/table/figure regeneration scripts do **not** need a GPU or PyTorch — they run on the
+> locked result files shipped in `results/`.
+
+## Datasets
+
+Original PigDetect and PigLife images/annotations are **not redistributed** here. See `docs/DATASETS.md`
+for the official sources (DOI / portal), the expected local directory layout, and the license terms.
+
+## Installation
+
+```bash
+git clone https://github.com/<USERNAME>/pig-detection-reproducibility-yolo26.git
+cd pig-detection-reproducibility-yolo26
+python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+# CUDA 11.8 PyTorch (if training/evaluating):
+pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cu118
+```
+
+## Reproduce PigDetect experiments
+
+```bash
+export PIG_DATA_ROOT=./data/PigDetect          # Windows: set PIG_DATA_ROOT=.\data\PigDetect
+python scripts/train/train_pigdetect.py \
+  --config configs/yolo26s_ca_siou.yaml --seed 42 \
+  --epochs 100 --imgsz 640 --batch 4 --optimizer MuSGD --lr0 0.01 --momentum 0.937 \
+  --siou --project ./runs/pigdetect --name E5_CA_SIoU
+python scripts/eval/evaluate_test.py --weights runs/pigdetect/E5_CA_SIoU/weights/best.pt --split test
+```
+
+All 20 PigDetect runs (E0–E6 + multi-seed + repeats) are enumerated with their exact parameters in
+`manifests/runs_pigdetect.csv`.
+
+## Reproduce PigLife experiments
+
+```bash
+python scripts/data/prepare_piglife.py --raw-root ./data/PigLife/raw --out-root ./data/PigLife_1280
+python scripts/train/train_piglife.py --config configs/yolo26s_baseline.yaml --seed 42 --name E0_42
+python scripts/eval/checkpoint_eval.py --run-dir runs/piglife/E0_42 --rule best,last   # both checkpoint rules
+```
+
+Runs: E0/E5 × {42,1,7}; E1/E2/E3 × {42}. See `manifests/runs_piglife.csv`.
+
+## Reproduce YOLO11s replication
+
+```bash
+python scripts/train/train_yolo11_replication.py --variant baseline --seed 42
+python scripts/train/train_yolo11_replication.py --variant CA       --seed 1
+```
+
+Runs: baseline and +CA × {42,1,7}. See `manifests/runs_yolo11_replication.csv`.
+
+## Statistical analysis
+
+No retraining required — these scripts recompute every statistic in the paper from the locked
+result files inside `results/`:
+
+```bash
+python scripts/analysis/reproduce_statistics.py    # 5-seed mean/SD, paired deltas, bootstrap CI, permutation p,
+                                                   # PigLife best/last, YOLO11 best/last, rank stability
+python scripts/analysis/bootstrap_multiseed_e0_e5.py   # exhaustive 5^5 paired bootstrap
+python scripts/analysis/permutation_test.py            # exact sign-flip permutation (2^5, 2^3)
+python scripts/analysis/rank_stability.py              # rank tables + Figure 11
+```
+
+## Generate manuscript tables
+
+```bash
+python scripts/analysis/reproduce_tables.py        # -> results/generated/table01.csv ... table18.csv
+```
+
+## Generate manuscript figures
+
+```bash
+python scripts/analysis/rank_stability.py                       # figures/fig11_rank_stability.png
+python scripts/analysis/reproduce_statistics.py --figure        # figures/fig10_cross_detector_effects.png
+python scripts/analysis/bbox_scale_audit.py --figure            # 640-coordinate scale distributions
+```
+
+Figures 1–9 are produced from the trained models / dataset statistics by the scripts listed in
+`docs/RESULTS_TRACEABILITY.md`.
+
+## Expected results
+
+- PigDetect test (250 images): E0 mAP@0.5:0.95 = 0.775, E5 = 0.781 (seed 42); 5-seed means 0.7732±0.0032 and 0.7761±0.0030.
+- PigLife test (426 images): E0 = 0.8855, E5 = 0.8834 (seed 42); 3-seed means 0.8841±0.0031 vs 0.8682±0.0133 (best.pt rule), 0.8882 vs 0.8884 (last.pt rule).
+- YOLO11s replication test: baseline 0.7707/0.7685/0.7724 vs +CA 0.7679/0.7733/0.7719 (best.pt, seeds 42/1/7).
+- Full numbers with sources: `docs/RESULTS_TRACEABILITY.md`.
+
+## Reproducibility notes
+
+- **Checkpoint policy** — validation split selects `best.pt`; `last.pt` (epoch 100) is used only as a
+  post-hoc checkpoint-rule sensitivity analysis; test is never queried per epoch and never used for model selection.
+- **Fixed-seed reruns** — E0 and E5 were each re-run 3× at seed 42 and produced identical predictions
+  (engineering reproducibility, not statistical stability).
+- **Multi-seed** — PigDetect E0/E5: {42,1,7,21,100}; E1/E3: {42,1,7}; PigLife E0/E5: {42,1,7}; YOLO11s: {42,1,7}.
+- **Statistics** — n = 5 (PigDetect) and n = 3 (PigLife / YOLO11s) are small: we report descriptive
+  statistics and exhaustive enumeration (bootstrap CI, exact sign-flip permutation) and do **not**
+  claim statistical significance or equivalence.
+- **Runtime** — single-image Python-API FPS on a laptop GPU varied by >10% between sessions and even
+  reversed the E0/E5 ordering, so FPS is reported only in `supplementary/` and is not used for model ranking.
+- **Paths** — all scripts read the dataset root from `PIG_DATA_ROOT` (or CLI arguments); no local
+  absolute paths are required.
+
+## Data availability
+
+PigDetect: https://doi.org/10.25625/I6UYE9 (not redistributed here).
+PigLife: https://data.aifarms.org/view/piglife (not redistributed here; obtain under the provider's license).
+Split lists used in this paper are provided in `splits/`.
+
+## Code availability
+
+This repository (AGPL-3.0) with a tagged release `v1.0.0` for the manuscript submission.
+Experimental audit snapshot of the development repository: commit `0f51028` (local, not public).
+
+## Citation
+
+See `CITATION.cff` (author list and repository URL to be completed before publication).
+
+## License
+
+**AGPL-3.0** — see `LICENSE`. Files that are derived from or modified relative to
+[Ultralytics](https://github.com/ultralytics/ultralytics) (`modules/coordatt.py`, `modules/bifpn.py`,
+`modules/siou_loss.py`, `configs/*`) retain their original copyright and license headers and are
+distributed under the same AGPL-3.0 terms.

@@ -1,0 +1,4 @@
+# source: results/audit/recheck_coco_20260909.json
+model,AP,AP75,APs(68),APm(2524),APl(2844)
+YOLO26s,0.7721,0.8867,0.3101,0.739,0.8066
+YOLO26s-CA-SIoU,0.7783,0.8907,0.3235,0.7455,0.8122

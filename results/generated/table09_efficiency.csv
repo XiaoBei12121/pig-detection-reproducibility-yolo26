@@ -1,0 +1,7 @@
+# mAP50-95 from Table 1; parameters/GFLOPs measured (scripts/analysis/complexity_audit.py)
+strategy,params_m,gflops,mAP5095_seed42,d_params_m,d_gflops
+YOLO26s,9.949,22.7,0.775,-,-
++CA,9.974,22.7,0.774,+0.025,~0
++SIoU,9.949,22.7,0.776,0,0
+CA+SIoU,9.974,22.7,0.781,+0.025,~0
++BiFPN-style,13.474,27.3,0.771,+3.525,+4.6

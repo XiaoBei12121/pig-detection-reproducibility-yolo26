@@ -1,0 +1,5 @@
+# source: results/error_analysis/error_analysis_conf025.json (NOT occlusion_analysis.json)
+level,instances,E0_miss,E5_miss,E0_recall,E5_recall
+Low,1715,24,21,0.986,0.9878
+Medium,1385,38,32,0.9726,0.9769
+High,2336,208,210,0.911,0.9101

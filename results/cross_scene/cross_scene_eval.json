@@ -1,0 +1,17 @@
+{
+    "note":  "Cross-scene (danuma held out) evaluation, PigDetect_cs test=450 images, ultralytics-val protocol, imgsz=640",
+    "E0_cs":  {
+                  "tag":  "E0_cs_test450",
+                  "P":  0.941,
+                  "R":  0.9124,
+                  "mAP50":  0.957,
+                  "mAP50-95":  0.798
+              },
+    "E5_cs":  {
+                  "tag":  "E5_cs_test450",
+                  "P":  0.9394,
+                  "R":  0.9072,
+                  "mAP50":  0.9554,
+                  "mAP50-95":  0.7947
+              }
+}
