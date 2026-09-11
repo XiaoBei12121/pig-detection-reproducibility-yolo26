@@ -4,7 +4,7 @@
 |---|---|
 | Repository | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26 (public) |
 | Repository URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26 |
-| **Submission release (cited by the manuscript)** | **`v1.0.2`** (annotated) = `5b94518` |
+| **Submission release (cited by the manuscript)** | **`v1.0.2`** (annotated) — resolve with `git rev-list -n1 v1.0.2` (this audit document is itself part of the tagged commit, so its own SHA is deliberately not hard-coded) |
 | Submission release URL | https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.2 |
 | Previous submission release (history) | `v1.0.1` (annotated) = `4c72d27` — author-metadata correction; unchanged and preserved |
 | First published release (history) | `v1.0.0` (annotated) = `84a7f08` — author metadata was still `TBD`; kept for history |
@@ -102,7 +102,8 @@
 
 ### Release `v1.0.2` — manuscript submission version (leakage-corrected confirmatory experiment)
 
-- Tag: `v1.0.2` (annotated) = `5b94518`, published 2026-09-11.
+- Tag: `v1.0.2` (annotated), published 2026-09-11; the tagged commit resolves with
+  `git rev-list -n1 v1.0.2` (deliberately not hard-coded here, because this file is part of it).
 - Release URL: https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v1.0.2
 - Added: `results/leakage_corrected_confirmatory/` (split audit, 20-checkpoint test evaluation, run
   manifest summary, paired statistics, run notes), `results/original_split_last_eval/` (the original

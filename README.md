@@ -11,7 +11,7 @@ rules, datasets, and two YOLO generations — and the answer is largely negative
 
 | Reference | Meaning |
 |---|---|
-| **Release `v1.0.2`** | **the submission version pinned by the manuscript's Code availability statement** (commit `5b94518`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
+| **Release `v1.0.2`** | **the submission version pinned by the manuscript's Code availability statement** (resolve its commit with `git rev-list -n1 v1.0.2`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
 | Release `v1.0.1` | author-metadata correction of the first frozen version; preserved for history (commit `4c72d27`) |
 | Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |
 | `main` | development branch, may receive documentation-only updates — do **not** cite it in the paper |
