@@ -11,13 +11,15 @@ rules, datasets, and two YOLO generations — and the answer is largely negative
 
 | Reference | Meaning |
 |---|---|
-| **Release `v1.0.1`** | the frozen version cited by the manuscript (author metadata complete); unchanged and preserved |
-| Release `v1.0.2` | adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
+| **Release `v1.0.2`** | **the submission version pinned by the manuscript's Code availability statement** (commit `5b94518`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
+| Release `v1.0.1` | author-metadata correction of the first frozen version; preserved for history (commit `4c72d27`) |
 | Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |
 | `main` | development branch, may receive documentation-only updates — do **not** cite it in the paper |
 
-The manuscript's Code availability statement is pinned to `v1.0.1`; `v1.0.2` is a strict extension
-(new confirmatory experiment and documentation, no original result, split, weight or log changed).
+`v1.0.2` is a strict extension of `v1.0.1`: no original result, split, weight or log was changed, and
+both earlier releases remain unchanged. The citation metadata in `CITATION.cff` still declares
+version `1.0.1`; only the Code availability statement was moved to `v1.0.2`, so the cited artifact
+contains the confirmatory experiment and the split-correction audit.
 
 ### What can be reproduced without retraining — and what cannot
 
@@ -46,7 +48,7 @@ Dalian 116028, Liaoning, China
 **Corresponding author:** Lifeng Yin — yinlifeng1030@djtu.edu.cn
 
 Manuscript: *"… evaluation of lightweight YOLO modifications for pig detection in densely occluded pens"* (in preparation; no journal, volume or DOI is asserted).
-The manuscript submission version of this artifact is pinned to release **`v1.0.1`**; see `PUBLIC_RELEASE_AUDIT.md` for the exact release tag and commit of every published version.
+The manuscript submission version of this artifact is pinned to release **`v1.0.2`**; see `PUBLIC_RELEASE_AUDIT.md` for the exact release tag and commit of every published version.
 
 ## Overview
 
@@ -238,8 +240,8 @@ Split lists used in this paper are provided in `splits/`.
 
 ## Code availability
 
-This repository (AGPL-3.0) with the tagged release `v1.0.1` that the manuscript pins, plus the
-additive release `v1.0.2` (leakage-corrected confirmatory experiment and split-correction report).
+This repository (AGPL-3.0) with the tagged release `v1.0.2` that the manuscript's Code availability
+statement pins, plus the earlier releases `v1.0.1` (author-metadata correction) and `v1.0.0`.
 Experimental audit snapshot of the development repository: commit `0f51028` (local, not public).
 
 ## Citation
