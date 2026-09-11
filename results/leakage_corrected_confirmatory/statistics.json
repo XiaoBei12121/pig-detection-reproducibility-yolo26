@@ -1,0 +1,155 @@
+{
+  "source": "<PIG_PROJECT>/results/leakage_corrected_confirmatory/test_eval_all.json",
+  "metric": "mAP@0.5:0.95 on the official PigDetect test split (250 images)",
+  "checkpoint_rules": {
+    "best": {
+      "n": 5,
+      "seeds": [
+        42,
+        1,
+        7,
+        21,
+        100
+      ],
+      "E0_mean": 0.775,
+      "E0_sd": 0.0025,
+      "E5_mean": 0.777,
+      "E5_sd": 0.0025,
+      "per_seed_delta": [
+        0.0001,
+        0.0088,
+        0.0032,
+        -0.0025,
+        0.0007
+      ],
+      "mean_delta": 0.0021,
+      "median_delta": 0.0007,
+      "sd_delta": 0.0043,
+      "min_delta": -0.0025,
+      "max_delta": 0.0088,
+      "positive_deltas": 4,
+      "negative_deltas": 1,
+      "bootstrap": {
+        "method": "exhaustive paired bootstrap, percentile 95% interval",
+        "resamples": 3125,
+        "ci_low": -0.00084,
+        "ci_high": 0.00556,
+        "contains_zero": true
+      },
+      "signflip": {
+        "configurations": 32,
+        "p_two_sided": 0.3125,
+        "p_one_sided": 0.1562,
+        "min_attainable_two_sided_p": 0.0625
+      }
+    },
+    "last": {
+      "n": 5,
+      "seeds": [
+        42,
+        1,
+        7,
+        21,
+        100
+      ],
+      "E0_mean": 0.7737,
+      "E0_sd": 0.0022,
+      "E5_mean": 0.7769,
+      "E5_sd": 0.0022,
+      "per_seed_delta": [
+        0.0043,
+        0.0083,
+        0.0056,
+        -0.0021,
+        -0.0001
+      ],
+      "mean_delta": 0.0032,
+      "median_delta": 0.0043,
+      "sd_delta": 0.0042,
+      "min_delta": -0.0021,
+      "max_delta": 0.0083,
+      "positive_deltas": 3,
+      "negative_deltas": 2,
+      "bootstrap": {
+        "method": "exhaustive paired bootstrap, percentile 95% interval",
+        "resamples": 3125,
+        "ci_low": -0.00016,
+        "ci_high": 0.00642,
+        "contains_zero": true
+      },
+      "signflip": {
+        "configurations": 32,
+        "p_two_sided": 0.25,
+        "p_one_sided": 0.125,
+        "min_attainable_two_sided_p": 0.0625
+      }
+    }
+  },
+  "per_seed": {
+    "best": {
+      "42": {
+        "E0": 0.778,
+        "E5": 0.7781,
+        "delta": 0.0001
+      },
+      "1": {
+        "E0": 0.7712,
+        "E5": 0.78,
+        "delta": 0.0088
+      },
+      "7": {
+        "E0": 0.7749,
+        "E5": 0.7781,
+        "delta": 0.0032
+      },
+      "21": {
+        "E0": 0.7761,
+        "E5": 0.7736,
+        "delta": -0.0025
+      },
+      "100": {
+        "E0": 0.7747,
+        "E5": 0.7754,
+        "delta": 0.0007
+      }
+    },
+    "last": {
+      "42": {
+        "E0": 0.7729,
+        "E5": 0.7772,
+        "delta": 0.0043
+      },
+      "1": {
+        "E0": 0.7712,
+        "E5": 0.7795,
+        "delta": 0.0083
+      },
+      "7": {
+        "E0": 0.7723,
+        "E5": 0.7779,
+        "delta": 0.0056
+      },
+      "21": {
+        "E0": 0.7756,
+        "E5": 0.7735,
+        "delta": -0.0021
+      },
+      "100": {
+        "E0": 0.7763,
+        "E5": 0.7762,
+        "delta": -0.0001
+      }
+    }
+  },
+  "reference_main_split": {
+    "note": "values reported in the manuscript for the original main split (unmodified)",
+    "E0_5seed_mAP5095": "0.7732 +/- 0.0032",
+    "E5_5seed_mAP5095": "0.7761 +/- 0.0030",
+    "mean_delta": 0.0029,
+    "bootstrap_ci95": [
+      -0.00048,
+      0.00628
+    ],
+    "signflip_p_two_sided": 0.3125
+  }
+}

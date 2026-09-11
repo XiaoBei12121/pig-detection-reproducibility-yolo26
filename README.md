@@ -11,16 +11,20 @@ rules, datasets, and two YOLO generations — and the answer is largely negative
 
 | Reference | Meaning |
 |---|---|
-| **Release `v1.0.1`** | the frozen version cited by the manuscript (author metadata complete) |
+| **Release `v1.0.1`** | the frozen version cited by the manuscript (author metadata complete); unchanged and preserved |
+| Release `v1.0.2` | adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
 | Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |
 | `main` | development branch, may receive documentation-only updates — do **not** cite it in the paper |
+
+The manuscript's Code availability statement is pinned to `v1.0.1`; `v1.0.2` is a strict extension
+(new confirmatory experiment and documentation, no original result, split, weight or log changed).
 
 ### What can be reproduced without retraining — and what cannot
 
 | Task | Requires | Status |
 |---|---|---|
 | Recompute every statistic (5-seed mean/SD, paired deltas, exhaustive bootstrap CI, exact sign-flip permutation, PigLife best/last, YOLO11s best/last, rank stability) | Python + the files in `results/` | ✅ fully reproducible offline |
-| Regenerate Tables 1–18 and Figures 10–11 | Python + numpy/matplotlib | ✅ fully reproducible offline |
+| Regenerate Tables 1–20 and Figures 10–12 | Python + numpy/matplotlib | ✅ fully reproducible offline |
 | Re-evaluate the reported metrics | the trained checkpoints (not redistributed) + the datasets | ⚠️ requires retraining or your own checkpoints |
 | Retrain any run | PigDetect/PigLife data obtained from the providers + `manifests/` + `configs/` | ⚠️ not a one-command reproduction: build the dataset layout, then follow `manifests/*.csv` |
 
@@ -68,6 +72,31 @@ protocol; the test split is never queried per epoch.
 | Occlusion / overlap | the weakest condition on both datasets; CA+SIoU did not improve the high-overlap group |
 | Runtime (FPS) | **not** used to rank models: repeated laptop-GPU measurements varied by >10% across sessions and reversed the E0/E5 ordering (see `supplementary/`) |
 
+## Leakage-corrected confirmatory experiment
+
+After auditing the original PigDetect split, we performed an additional clip-disjoint confirmatory
+experiment. The corrected evaluation preserved the original conclusion that lightweight modifications
+produced small and statistically uncertain gains.
+
+The audit (`docs/PIGDETECT_SPLIT_AUDIT.md`) found that the original main train/val split is
+image-disjoint but shares 17 clip keys (~1% of 1729), i.e. a small sequence-level overlap caused by
+incomplete sequence identifiers in part of the file names. The corrected split was rebuilt from the
+same 2681-image development pool with a frame-aware clip key, giving **train ∩ val image overlap = 0**
+and **train ∩ val clip overlap = 0**; the official 250-image test split was not accessed until all
+training procedures were finalized and took no part in splitting, training or checkpoint selection.
+
+| Split / checkpoint rule | mean Δ (E5−E0) | 95% bootstrap interval | exact sign-flip p |
+|---|---:|---|---:|
+| Original split, `best.pt` (published) | +0.0029 | [−0.00048, +0.00628] | 0.3125 |
+| Original split, `last.pt` (measured afterwards from the same frozen checkpoints) | +0.0017 | [−0.00096, +0.00366] | 0.2500 |
+| Leakage-corrected split, `best.pt` | +0.0021 | [−0.00084, +0.00556] | 0.3125 |
+| Leakage-corrected split, `last.pt` | +0.0032 | [−0.00016, +0.00642] | 0.2500 |
+
+Every 95% interval contains zero and the sign-flip test is not significant at n = 5 seeds
+(p ≥ 0.25); removing the clip-level overlap changes neither the sign nor the magnitude of the effect.
+Details, including the disclosed retraining incident of one run and the limitations that must be kept,
+are in `docs/SPLIT_CORRECTION_REPORT.md` (deliverables: table19, table20, `figures/fig12_split_correction_effect.png`).
+
 ## Repository structure
 
 ```
@@ -78,7 +107,8 @@ splits/         exact image lists (relative names only) for every split used in 
 manifests/      one row per run: config, seed, hyper-parameters, metrics, result file
 results/        locked result files (tables, statistics, cross-scene, error/occlusion analysis, audit)
 figures/        manuscript figures
-docs/           REPRODUCIBILITY / DATASETS / EXPERIMENT_MATRIX / RESULTS_TRACEABILITY / ENVIRONMENT
+docs/           REPRODUCIBILITY / DATASETS / EXPERIMENT_MATRIX / RESULTS_TRACEABILITY / ENVIRONMENT /
+                PIGDETECT_SPLIT_AUDIT / SPLIT_CORRECTION_REPORT
 supplementary/  runtime (FPS) measurements and notes
 ```
 
@@ -156,6 +186,7 @@ python scripts/analysis/rank_stability.py              # rank tables + Figure 11
 
 ```bash
 python scripts/analysis/reproduce_tables.py        # -> results/generated/table01.csv ... table18.csv
+python scripts/analysis/reproduce_split_correction.py   # -> results/generated/table19.csv, table20.csv
 ```
 
 ## Generate manuscript figures
@@ -163,6 +194,7 @@ python scripts/analysis/reproduce_tables.py        # -> results/generated/table0
 ```bash
 python scripts/analysis/rank_stability.py                       # figures/fig11_rank_stability.png
 python scripts/analysis/reproduce_statistics.py --figure        # figures/fig10_cross_detector_effects.png
+python scripts/analysis/reproduce_split_correction.py           # figures/fig12_split_correction_effect.png
 python scripts/analysis/bbox_scale_audit.py --figure            # 640-coordinate scale distributions
 ```
 
@@ -174,6 +206,7 @@ Figures 1–9 are produced from the trained models / dataset statistics by the s
 - PigDetect test (250 images): E0 mAP@0.5:0.95 = 0.775, E5 = 0.781 (seed 42); 5-seed means 0.7732±0.0032 and 0.7761±0.0030.
 - PigLife test (426 images): E0 = 0.8855, E5 = 0.8834 (seed 42); 3-seed means 0.8841±0.0031 vs 0.8682±0.0133 (best.pt rule), 0.8882 vs 0.8884 (last.pt rule).
 - YOLO11s replication test: baseline 0.7707/0.7685/0.7724 vs +CA 0.7679/0.7733/0.7719 (best.pt, seeds 42/1/7).
+- Leakage-corrected confirmatory split (E0/E5 × seeds 42/1/7/21/100, official test 250): mean Δ **+0.0021** (`best.pt`, CI [−0.00084, +0.00556], p = 0.3125) and **+0.0032** (`last.pt`, CI [−0.00016, +0.00642], p = 0.2500).
 - Full numbers with sources: `docs/RESULTS_TRACEABILITY.md`.
 
 ## Reproducibility notes
@@ -190,6 +223,12 @@ Figures 1–9 are produced from the trained models / dataset statistics by the s
   reversed the E0/E5 ordering, so FPS is reported only in `supplementary/` and is not used for model ranking.
 - **Paths** — all scripts read the dataset root from `PIG_DATA_ROOT` (or CLI arguments); no local
   absolute paths are required.
+- **Leakage-corrected confirmatory experiment** — one of its ten runs (`lc_E5_seed7`) first terminated
+  after ~1 min with an incidental CUDA out-of-memory error and was rerun from scratch under the
+  identical predefined configuration; the failed (weight-free) run directory is retained and the rerun
+  is reported under `lc_E5_seed7-2`. The official test split was evaluated once per checkpoint after
+  training, and the 18 checkpoints already measured before that rerun reproduced identically. See
+  `results/leakage_corrected_confirmatory/run_notes.md`.
 
 ## Data availability
 
@@ -199,7 +238,8 @@ Split lists used in this paper are provided in `splits/`.
 
 ## Code availability
 
-This repository (AGPL-3.0) with a tagged release `v1.0.0` for the manuscript submission.
+This repository (AGPL-3.0) with the tagged release `v1.0.1` that the manuscript pins, plus the
+additive release `v1.0.2` (leakage-corrected confirmatory experiment and split-correction report).
 Experimental audit snapshot of the development repository: commit `0f51028` (local, not public).
 
 ## Citation

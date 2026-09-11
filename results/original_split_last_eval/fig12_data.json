@@ -1,0 +1,37 @@
+{
+  "metric": "mAP@0.5:0.95 on the official PigDetect test split (250 images)",
+  "series": {
+    "original_best": {
+      "mean_delta": 0.0029,
+      "ci95": [
+        -0.00048,
+        0.00628
+      ],
+      "source": "published main-split five-seed table (best.pt)"
+    },
+    "original_last": {
+      "mean_delta": 0.0017,
+      "ci95": [
+        -0.00096,
+        0.00366
+      ],
+      "source": "results/original_split_last_eval/statistics.json"
+    },
+    "corrected_best": {
+      "mean_delta": 0.0021,
+      "ci95": [
+        -0.00084,
+        0.00556
+      ],
+      "source": "results/leakage_corrected_confirmatory/statistics.json"
+    },
+    "corrected_last": {
+      "mean_delta": 0.0032,
+      "ci95": [
+        -0.00016,
+        0.00642
+      ],
+      "source": "results/leakage_corrected_confirmatory/statistics.json"
+    }
+  }
+}

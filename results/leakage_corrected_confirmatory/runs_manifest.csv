@@ -1,0 +1,11 @@
+run,variant,seed,pretrained_source,siou,best_epoch,val_map50,val_map5095,test_best_map5095,test_last_map5095,git_commit
+lc_E0_seed42,E0,42,yolo26s.pt,False,87,0.9876,0.8583,0.778,0.7729,0c19f2d
+lc_E5_seed42,E5,42,weights/yolo26s_ca_aligned.pt,True,87,0.9865,0.8574,0.7781,0.7772,0c19f2d
+lc_E0_seed1,E0,1,yolo26s.pt,False,100,0.9873,0.8616,0.7712,0.7712,0c19f2d
+lc_E5_seed1,E5,1,weights/yolo26s_ca_aligned.pt,True,99,0.9862,0.8561,0.78,0.7795,0c19f2d
+lc_E0_seed7,E0,7,yolo26s.pt,False,85,0.9874,0.8595,0.7749,0.7723,0c19f2d
+lc_E5_seed7-2,E5,7,weights/yolo26s_ca_aligned.pt,True,90,0.9876,0.8604,0.7781,0.7779,a239558
+lc_E0_seed21,E0,21,yolo26s.pt,False,98,0.9876,0.8566,0.7761,0.7756,9d21318
+lc_E5_seed21,E5,21,weights/yolo26s_ca_aligned.pt,True,90,0.988,0.8571,0.7736,0.7735,98771b5
+lc_E0_seed100,E0,100,yolo26s.pt,False,95,0.9802,0.8561,0.7747,0.7763,2431b8e
+lc_E5_seed100,E5,100,weights/yolo26s_ca_aligned.pt,True,84,0.9869,0.8591,0.7754,0.7762,ed54df3

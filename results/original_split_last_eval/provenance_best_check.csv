@@ -1,0 +1,11 @@
+variant,seed,published_best_map5095,reevaluated_best_map5095,difference,checkpoint
+E0,42,0.7747,0.7747,0.0,<PIG_PROJECT>/results/baseline/E0_baseline/weights/best.pt
+E5,42,0.7806,0.7806,0.0,<PIG_PROJECT>/results/ablation/E5_CA_SIoU/weights/best.pt
+E0,1,0.7739,0.7739,0.0,<PIG_PROJECT>/results/multiseed/E0_seed1/weights/best.pt
+E5,1,0.7725,0.7725,0.0,<PIG_PROJECT>/results/multiseed/E5_seed1/weights/best.pt
+E0,7,0.7768,0.7768,0.0,<PIG_PROJECT>/results/multiseed/E0_seed7/weights/best.pt
+E5,7,0.7759,0.7759,0.0,<PIG_PROJECT>/results/multiseed/E5_seed7/weights/best.pt
+E0,21,0.7683,0.7683,0.0,<PIG_PROJECT>/results/multiseed/E0_seed21/weights/best.pt
+E5,21,0.777,0.777,0.0,<PIG_PROJECT>/results/multiseed/E5_seed21/weights/best.pt
+E0,100,0.7724,0.7724,0.0,<PIG_PROJECT>/results/multiseed/E0_seed100/weights/best.pt
+E5,100,0.7746,0.7746,0.0,<PIG_PROJECT>/results/multiseed/E5_seed100/weights/best.pt

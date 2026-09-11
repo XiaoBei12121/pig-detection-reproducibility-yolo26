@@ -1,0 +1,49 @@
+{
+  "audit": "leakage-corrected confirmatory split",
+  "script": "scripts/split_leakage_corrected.py",
+  "script_version": "1.0",
+  "seed": 42,
+  "val_images_target": 270,
+  "clip_rule": "before '--' > before '_frame_' > strip trailing '-<digits>' > strip trailing '_<digits>' > base name",
+  "dev_pool_images": 2681,
+  "clip_groups_total": 1712,
+  "train": {
+    "images": 2411,
+    "instances": 33127,
+    "clip_keys": 1484,
+    "source_counts": {
+      "danuma": 1259,
+      "bergamini": 162,
+      "psota": 733,
+      "alameer": 257
+    }
+  },
+  "val": {
+    "images": 270,
+    "instances": 3614,
+    "clip_keys": 228,
+    "source_counts": {
+      "danuma": 195,
+      "bergamini": 24,
+      "alameer": 51
+    }
+  },
+  "checks": {
+    "train_val_image_intersection": 0,
+    "train_val_clip_intersection": 0,
+    "image_intersection_examples": [],
+    "clip_intersection_examples": [],
+    "train_val_image_intersection_is_zero": true,
+    "train_val_clip_intersection_is_zero": true
+  },
+  "official_test": {
+    "images": 250,
+    "modified": false,
+    "used_for_splitting": false,
+    "used_for_checkpoint_selection": false,
+    "image_intersection_with_train": 0,
+    "image_intersection_with_val": 0
+  },
+  "yaml": "<PIG_PROJECT>/dataset/PigDetect_lc/pig_lc.yaml",
+  "git_commit": "0bb7d8f396e127576ce82e75b176221ab802be7f"
+}

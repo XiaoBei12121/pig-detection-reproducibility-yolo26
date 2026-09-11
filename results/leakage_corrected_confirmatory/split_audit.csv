@@ -1,0 +1,4 @@
+split,images,instances,clip_keys,danuma,psota,alameer,bergamini,other
+train,2411,33127,1484,1259,733,257,162,0
+val,270,3614,228,195,0,51,24,0
+official_test,250,-,-,-,-,-,-,untouched benchmark
