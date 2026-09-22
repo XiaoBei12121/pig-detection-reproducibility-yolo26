@@ -1,6 +1,6 @@
 {
   "generated": "2026-09-17T17:01:28",
-  "input": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\experiments\\cea_extension_v2\\results\\oinktrack_all_evaluations.csv",
+  "input": "<PIG_PROJECT>\\experiments\\cea_extension_v2\\results\\oinktrack_all_evaluations.csv",
   "label": "oinktrack",
   "rules": {
     "bootstrap_resamples": 100000,

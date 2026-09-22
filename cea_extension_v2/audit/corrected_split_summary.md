@@ -25,7 +25,7 @@
 | test_vs_train_clip_intersection_zero | 0 | PASS |
 | test_vs_val_clip_intersection_zero | 0 | PASS |
 | no_duplicate_image_content_across_splits | 0 | PASS |
-| yaml_test_entry_points_at_official_test | {"path": "<PIG_PROJECT>/dataset/PigDetect_lc", "test": "../PigDetect/test/images", "resolved": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\dataset\\PigDetect\\test\\images", "expected": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\dataset\\PigDetect\\test\\images"} | PASS |
+| yaml_test_entry_points_at_official_test | {"path": "<PIG_PROJECT>/dataset/PigDetect_lc", "test": "../PigDetect/test/images", "resolved": "<PIG_PROJECT>\\dataset\\PigDetect\\test\\images", "expected": "<PIG_PROJECT>\\dataset\\PigDetect\\test\\images"} | PASS |
 | official_test_is_danuma_only | {"danuma": 250} | PASS |
 | train_contains_danuma_so_test_not_cross_farm | 1259 | PASS |
 

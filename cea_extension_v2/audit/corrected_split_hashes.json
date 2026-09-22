@@ -1,6 +1,6 @@
 {
   "yaml": {
-    "file": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\dataset\\PigDetect_lc\\pig_lc.yaml",
+    "file": "<PIG_PROJECT>\\dataset\\PigDetect_lc\\pig_lc.yaml",
     "sha256": "e29520cdeb2ece4762b316e550d373b8e2dc34f4012ca2c16391c98dc3bd3564"
   },
   "per_split_content_sha256": {

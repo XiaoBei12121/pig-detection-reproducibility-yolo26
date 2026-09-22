@@ -14,7 +14,8 @@ insufficient to justify replacing E0 with E5.
 
 | Reference | Meaning |
 |---|---|
-| **Release `v2.0.0`** | CEA reliability-oriented evidence snapshot: 10 matched E0/E5 seeds, frozen OinkTrack evaluation, exact sign-flip, failure-condition and latency summaries |
+| **Release `v2.0.1`** | Current CEA extension snapshot; removes residual local path text in public JSON copies without changing any results |
+| **Release `v2.0.0`** | Superseded path-normalization snapshot: 10 matched E0/E5 seeds, frozen OinkTrack evaluation, exact sign-flip, failure-condition and latency summaries |
 | **Release `v1.0.2`** | the earlier pre-extension snapshot (resolve its commit with `git rev-list -n1 v1.0.2`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
 | Release `v1.0.1` | author-metadata correction of the first frozen version; preserved for history (commit `4c72d27`) |
 | Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |

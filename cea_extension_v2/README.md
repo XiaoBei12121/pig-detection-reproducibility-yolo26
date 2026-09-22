@@ -1,6 +1,6 @@
 # CEA extension evidence snapshot
 
-This directory publishes the code, locked protocol, derived evaluation tables, and audit summaries for the reliability-oriented pig-detection model-selection study. It extends, but does not rewrite, the earlier `v1.0.2` reproducibility artifact. The associated manuscript is under author review; these files are research evidence, not a claim of journal acceptance or prospective farm validation.
+This directory publishes the code, locked protocol, derived evaluation tables, and audit summaries for the reliability-oriented pig-detection model-selection study. It extends, but does not rewrite, the earlier `v1.0.2` reproducibility artifact. The current `v2.0.1` maintenance release corrects residual local path text in public JSON copies from `v2.0.0`; no metric, count, seed, or statistical result changed. The associated manuscript is under author review; these files are research evidence, not a claim of journal acceptance or prospective farm validation.
 
 ## Read the results in order
 

@@ -1,11 +1,11 @@
 {
   "generated": "2026-09-16T01:25:12",
-  "project_root": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project",
+  "project_root": "<PIG_PROJECT>",
   "git_commit_at_lock": "9918d0878e6087be3f4fd99927c8ab4d52393ede",
   "git_branch": "master",
   "dataset": {
     "name": "PigDetect leakage-corrected split (PigDetect_lc)",
-    "yaml": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\dataset\\PigDetect_lc\\pig_lc.yaml",
+    "yaml": "<PIG_PROJECT>\\dataset\\PigDetect_lc\\pig_lc.yaml",
     "yaml_sha256": "e29520cdeb2ece4762b316e550d373b8e2dc34f4012ca2c16391c98dc3bd3564",
     "train_images": 2411,
     "val_images": 270,
@@ -34,12 +34,12 @@
   "models": {
     "E0": {
       "description": "YOLO26s baseline",
-      "weights_source": "C:\\Users\\26079\\PycharmProjects\\yolo26\\yolo26s.pt",
+      "weights_source": "<YOLO26_PARENT>\\yolo26s.pt",
       "weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b"
     },
     "E5": {
       "description": "YOLO26s + CA (after backbone C2PSA) + SIoU regression loss",
-      "weights_source": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\weights\\yolo26s_ca_aligned.pt",
+      "weights_source": "<PIG_PROJECT>\\weights\\yolo26s_ca_aligned.pt",
       "weights_sha256": "a8ce0ae94d037ea6be90519f4e3a34d53d192da376c7ff39987524b7a12b6c8d",
       "siou_env_var": "YOLO_SIOU=1",
       "weight_alignment": "scripts/align_weights_ca.py (weight-aligned CA initialisation used for every E5 run)"
@@ -263,7 +263,7 @@
   },
   "rtdetr_protocol": {
     "role": "non-YOLO architecture-family boundary/context check only; no architectural edits",
-    "weights": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\rtdetr-l.pt",
+    "weights": "<PIG_PROJECT>\\rtdetr-l.pt",
     "weights_present": false,
     "loader": "from ultralytics import RTDETR; RTDETR('rtdetr-l.pt')",
     "dataset": "same PigDetect leakage-corrected split",
@@ -317,7 +317,7 @@
     "delete_failed_runs": false,
     "rerun_rule": "a failure may only be retrained from scratch with the identical configuration, and the failure must be recorded",
     "known_failure_recorded": {
-      "dir": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\results\\leakage_corrected_confirmatory\\runs\\lc_E5_seed7",
+      "dir": "<PIG_PROJECT>\\results\\leakage_corrected_confirmatory\\runs\\lc_E5_seed7",
       "exists": true,
       "files": [
         "args.yaml",

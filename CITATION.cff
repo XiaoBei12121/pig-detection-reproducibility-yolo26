@@ -2,11 +2,11 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the associated manuscript."
 title: "Reliable model selection for pig detection: reproducibility artifact"
 type: software
-version: "2.0.0"
+version: "2.0.1"
 date-released: "2026-09-22"
 license: "AGPL-3.0-only"
 repository-code: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26"
-url: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v2.0.0"
+url: "https://github.com/XiaoBei12121/pig-detection-reproducibility-yolo26/releases/tag/v2.0.1"
 
 authors:
   - family-names: "Kang"

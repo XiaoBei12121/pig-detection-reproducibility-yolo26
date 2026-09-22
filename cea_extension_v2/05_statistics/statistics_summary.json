@@ -1,6 +1,6 @@
 {
   "generated": "2026-09-17T17:03:24",
-  "input": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\experiments\\cea_extension_v2\\results\\pigdetect_corrected_combined.csv",
+  "input": "<PIG_PROJECT>\\experiments\\cea_extension_v2\\results\\pigdetect_corrected_combined.csv",
   "label": "pigdetect_corrected_10seed",
   "rules": {
     "bootstrap_resamples": 100000,
