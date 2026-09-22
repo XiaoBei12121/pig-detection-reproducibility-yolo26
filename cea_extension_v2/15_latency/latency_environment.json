@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-09-21T19:27:25",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.21",
+  "torch": "2.0.1+cu118",
+  "torch_cuda": "11.8",
+  "cudnn": "8700",
+  "cudnn_benchmark": false,
+  "ultralytics": "8.4.135",
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU, 592.82, 6141 MiB",
+  "device_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "device_capability": "8.9",
+  "imgsz": 640,
+  "batches": [
+    1,
+    4
+  ],
+  "precisions": [
+    "fp32",
+    "fp16"
+  ],
+  "warmup_iterations": 100,
+  "measured_iterations": 1000,
+  "rounds": 3,
+  "timing": "torch.cuda.Event around one forward pass, torch.cuda.synchronize() each iteration",
+  "excluded_from_timing": [
+    "image decode",
+    "letterbox/pre-processing",
+    "NMS post-processing",
+    "disk I/O",
+    "python-level result formatting beyond the forward call"
+  ],
+  "fairness": [
+    "no torch.compile",
+    "no TensorRT/ONNX",
+    "no CUDA graphs",
+    "each configuration loads its own weights once",
+    "one fixed GPU tensor reused for every iteration",
+    "no other GPU workload running during the benchmark"
+  ],
+  "gpu_mem_used_before_start_mib": "0",
+  "validation_measurement": {
+    "question": "is the first measured configuration penalised by cold GPU clocks?",
+    "finding": "YES - confirmed",
+    "evidence": {
+      "cold_first_configuration": "E0 (baseline, best) b=1 fp32 mean 28.466 ms (first config of the run)",
+      "same_architecture_later": "E0 (baseline, last) b=1 fp32 mean 18.463 ms",
+      "re_measure_after_60s_gpu_prewarm": "E0 (baseline, best) b=1 fp32 mean 18.010 ms (median 17.425, p95 16.151, FPS 55.53)",
+      "difference": "-10.456 ms (-37%) for identical architecture and configuration"
+    },
+    "consequence": "compare configurations measured after the first one (steady state); the first row of latency_summary.csv is a cold-start number and is flagged as such in LATENCY_REPORT.md",
+    "protocol_of_re_measurement": "same tensor shape/dtype, 60 s pre-warm loop, 100 warm-up iterations, 1000 measured iterations x 3 rounds, CUDA events with synchronize"
+  }
+}

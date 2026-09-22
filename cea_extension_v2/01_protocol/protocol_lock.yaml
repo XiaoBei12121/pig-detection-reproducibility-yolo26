@@ -1,0 +1,335 @@
+{
+  "generated": "2026-09-16T01:25:12",
+  "project_root": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project",
+  "git_commit_at_lock": "9918d0878e6087be3f4fd99927c8ab4d52393ede",
+  "git_branch": "master",
+  "dataset": {
+    "name": "PigDetect leakage-corrected split (PigDetect_lc)",
+    "yaml": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\dataset\\PigDetect_lc\\pig_lc.yaml",
+    "yaml_sha256": "e29520cdeb2ece4762b316e550d373b8e2dc34f4012ca2c16391c98dc3bd3564",
+    "train_images": 2411,
+    "val_images": 270,
+    "test_images": 250,
+    "train_instances": 33127,
+    "val_instances": 3614,
+    "test_instances": 5436,
+    "train_val_image_intersection": 0,
+    "train_val_clip_intersection": 0,
+    "test_vs_train_image_intersection": 0,
+    "test_vs_val_image_intersection": 0,
+    "per_split_content_sha256": {
+      "corrected_train": "f8aa741990ac6525c26393375b11728fb79e57e95297253a5d817f058f0716ad",
+      "corrected_val": "3964365ba15f0455069505e328251f10aca4ecfa889d0feb4d7afd53c909a9ff",
+      "official_test": "7b243f9ef760e910b7fd692c8030958794f59774b71cfdb2e25fa4eb0fc4c633"
+    },
+    "split_manifest_sha256": {
+      "corrected_train": "9747a6c5fbd11e51dd1bfc66f99b02dc69ec4f9f4ce69fa6a0dbf94f76be5849",
+      "corrected_val": "e8a853f0f98fe7b71582dae07fb69c54ae69606f09e0b74b6bd0323221377943",
+      "official_test": "2279854ad0a46092efecb626784a96d1df331f74737a1cda1d2aaf33a3e6637a"
+    },
+    "test_is_danuma_same_source_domain": true,
+    "test_may_be_called_cross_farm": false,
+    "clip_limitation": "danuma file names expose no frame/video marker, so for danuma the clip key degenerates to the base name"
+  },
+  "models": {
+    "E0": {
+      "description": "YOLO26s baseline",
+      "weights_source": "C:\\Users\\26079\\PycharmProjects\\yolo26\\yolo26s.pt",
+      "weights_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b"
+    },
+    "E5": {
+      "description": "YOLO26s + CA (after backbone C2PSA) + SIoU regression loss",
+      "weights_source": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\weights\\yolo26s_ca_aligned.pt",
+      "weights_sha256": "a8ce0ae94d037ea6be90519f4e3a34d53d192da376c7ff39987524b7a12b6c8d",
+      "siou_env_var": "YOLO_SIOU=1",
+      "weight_alignment": "scripts/align_weights_ca.py (weight-aligned CA initialisation used for every E5 run)"
+    }
+  },
+  "seeds": {
+    "matched_set": [
+      1,
+      7,
+      21,
+      42,
+      100,
+      101,
+      103,
+      107,
+      109,
+      113
+    ],
+    "old_seeds_pooled_after_audit": [
+      42,
+      1,
+      7,
+      21,
+      100
+    ],
+    "new_seeds_this_phase": [
+      101,
+      103,
+      107,
+      109,
+      113
+    ],
+    "rule": "E0 and E5 are trained on exactly the same ten seeds; no seed may be dropped, replaced, extended or selected after seeing results."
+  },
+  "training_hyperparameters": {
+    "frozen_explicit": {
+      "epochs": 100,
+      "imgsz": 640,
+      "batch": 4,
+      "optimizer": "MuSGD",
+      "lr0": 0.01,
+      "momentum": 0.937
+    },
+    "inherited_from_old_run_args_yaml": {
+      "epochs": 100,
+      "time": null,
+      "patience": 100,
+      "batch": 4,
+      "imgsz": 640,
+      "save": true,
+      "save_period": -1,
+      "cache": false,
+      "device": "'0'",
+      "workers": 8,
+      "exist_ok": false,
+      "pretrained": true,
+      "cls_remap": true,
+      "optimizer": "MuSGD",
+      "verbose": true,
+      "deterministic": true,
+      "single_cls": false,
+      "rect": false,
+      "cos_lr": false,
+      "close_mosaic": 10,
+      "resume": false,
+      "amp": true,
+      "fraction": 1.0,
+      "profile": false,
+      "freeze": null,
+      "multi_scale": 0.0,
+      "compile": false,
+      "channels_last": null,
+      "overlap_mask": true,
+      "mask_ratio": 4,
+      "dropout": 0.0,
+      "val": true,
+      "split": "val",
+      "save_json": false,
+      "conf": null,
+      "iou": 0.7,
+      "max_det": 300,
+      "quantize": null,
+      "dnn": false,
+      "plots": true,
+      "end2end": null,
+      "source": null,
+      "vid_stride": 1,
+      "stream_buffer": false,
+      "visualize": false,
+      "augment": false,
+      "agnostic_nms": false,
+      "classes": null,
+      "retina_masks": false,
+      "embed": null,
+      "show": false,
+      "save_frames": false,
+      "save_txt": false,
+      "save_conf": false,
+      "save_crop": false,
+      "show_labels": true,
+      "show_conf": true,
+      "show_boxes": true,
+      "line_width": null,
+      "format": "torchscript",
+      "keras": false,
+      "optimize": false,
+      "dynamic": false,
+      "simplify": true,
+      "opset": null,
+      "workspace": null,
+      "nms": false,
+      "lr0": 0.01,
+      "lrf": 0.01,
+      "momentum": 0.937,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3.0,
+      "warmup_momentum": 0.8,
+      "warmup_bias_lr": 0.1,
+      "distill_model": null,
+      "dis": 6.0,
+      "box": 7.5,
+      "cls": 0.5,
+      "cls_pw": 0.0,
+      "dfl": 1.5,
+      "pose": 12.0,
+      "kobj": 1.0,
+      "rle": 1.0,
+      "angle": 1.0,
+      "dlog": 1.0,
+      "dgrad": 0.5,
+      "dlam": 1.0,
+      "nbs": 64,
+      "hsv_h": 0.015,
+      "hsv_s": 0.7,
+      "hsv_v": 0.4,
+      "degrees": 0.0,
+      "translate": 0.1,
+      "scale": 0.5,
+      "shear": 0.0,
+      "perspective": 0.0,
+      "flipud": 0.0,
+      "fliplr": 0.5,
+      "bgr": 0.0,
+      "mosaic": 1.0,
+      "mixup": 0.0,
+      "cutmix": 0.0,
+      "copy_paste": 0.0,
+      "copy_paste_mode": "flip",
+      "auto_augment": "randaugment",
+      "erasing": 0.4,
+      "cfg": null,
+      "tracker": "tracktrack.yaml"
+    },
+    "old_run_varying_keys": [
+      "model"
+    ],
+    "note": "New runs copy the command line of the original corrected runs: yolo detect train model=<weights> data=<pig_lc.yaml> epochs=100 imgsz=640 batch=4 optimizer=MuSGD seed=<seed> project=<dir> name=<run> device=0, with YOLO_SIOU=1 in the environment for E5."
+  },
+  "checkpoint_rules": {
+    "best": "best.pt = first epoch attaining the maximum validation fitness (ultralytics updates best only on a strictly greater value)",
+    "last": "last.pt = epoch 100",
+    "both_reported": true
+  },
+  "evaluation": {
+    "implementation": "ultralytics YOLO(...).val, identical to scripts/eval_lc_test.py",
+    "split": "test (official PigDetect 250-image benchmark split)",
+    "imgsz": 640,
+    "batch": 8,
+    "workers": 0,
+    "metrics": [
+      "mAP@0.5",
+      "mAP@0.5:0.95",
+      "precision",
+      "recall"
+    ],
+    "conf_iou_rule": "default validation rule; never tuned",
+    "params_convention": "unfused parameters in millions, as in the manuscript Table 9 (E0 9.949M, E5 9.974M)",
+    "gflops_convention": "ultralytics get_flops at imgsz=640 (22.7 GFLOPs for both variants)",
+    "diagnostics_rule": {
+      "confidence_min": 0.25,
+      "iou_min": 0.5
+    },
+    "re_evaluation_required": "training-log values are never reused; every checkpoint is re-evaluated from the saved weights"
+  },
+  "statistics": {
+    "metric": "mAP@0.5:0.95 (primary), reported per seed as raw values",
+    "paired_delta": "Delta_i = E5_i - E0_i for each matched seed i",
+    "summary": [
+      "mean",
+      "median",
+      "sample SD (n-1)",
+      "min",
+      "max",
+      "positive/negative/zero pair counts"
+    ],
+    "bootstrap": {
+      "type": "paired bootstrap over the ten deltas, sampling with replacement",
+      "resamples": 100000,
+      "rng_seed": 20260916,
+      "interval": "percentile 95% CI"
+    },
+    "signflip": {
+      "type": "exact paired sign-flip permutation, full enumeration",
+      "configurations": 1024,
+      "reported": [
+        "one-sided p",
+        "two-sided p"
+      ]
+    },
+    "interpretation_rules": [
+      "p > 0.05 is never reported as evidence of equivalence",
+      "p < 0.05 is never reported as automatic practical significance",
+      "no post-hoc power analysis",
+      "no SESOI threshold is defined unless a literature/agricultural-engineering basis exists",
+      "raw per-seed deltas are always reported alongside any summary"
+    ],
+    "checkpoint_rules_analysed_separately": [
+      "best",
+      "last"
+    ]
+  },
+  "rtdetr_protocol": {
+    "role": "non-YOLO architecture-family boundary/context check only; no architectural edits",
+    "weights": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\rtdetr-l.pt",
+    "weights_present": false,
+    "loader": "from ultralytics import RTDETR; RTDETR('rtdetr-l.pt')",
+    "dataset": "same PigDetect leakage-corrected split",
+    "epochs": 100,
+    "imgsz": 640,
+    "seeds": [
+      42,
+      1,
+      7
+    ],
+    "batch": "determined by an explicit smoke test (4 -> 2 -> 1 on OOM); the largest stable batch is then used identically for all three seeds",
+    "optimizer": "ultralytics/model-native defaults for RT-DETR; MuSGD of YOLO26 is NOT transferred; the optimizer, lr, scheduler, weight decay, augmentation and AMP actually used are recorded from the training logs",
+    "deterministic": false,
+    "deterministic_reason": "deformable attention relies on F.grid_sample, whose CUDA backward is not fully deterministic in the installed PyTorch",
+    "amp": "smoke-tested first; if NaN losses/predictions or matching errors appear, the whole RT-DETR protocol switches to AMP=False for all seeds",
+    "checkpoints": [
+      "best.pt",
+      "last.pt"
+    ],
+    "evaluation": "official PigDetect test 250"
+  },
+  "oinktrack_external_rule": {
+    "role": "external public-dataset evaluation of already frozen models",
+    "status": "not yet downloaded at lock time; the acquisition and conversion protocol is fixed here",
+    "official_pipeline": "OinkTrack official repository + official make_dataset.py",
+    "test_split": "official test sequences only; never re-selected",
+    "evaluation": {
+      "imgsz": 640,
+      "checkpoints": "E0/E5 x 10 seeds x {best,last} and RT-DETR-L x 3 seeds x {best,last}",
+      "diagnostics_rule": {
+        "confidence_min": 0.25,
+        "iou_min": 0.5
+      }
+    },
+    "forbidden": [
+      "any training or fine-tuning on OinkTrack",
+      "any threshold/NMS tuning on OinkTrack",
+      "any checkpoint selection on OinkTrack",
+      "changing the test scenes after seeing results"
+    ],
+    "allowed_description": "independent external public dataset / external public-dataset evaluation",
+    "forbidden_description": "prospective cross-farm cohort / deployment-ready external validation",
+    "overlap_proxy": {
+      "Low": "< 0.3",
+      "Medium": "0.3-0.6",
+      "High": "> 0.6",
+      "meaning": "geometric bounding-box overlap proxy, not annotated visible occlusion percentage"
+    }
+  },
+  "failure_policy": {
+    "delete_failed_runs": false,
+    "rerun_rule": "a failure may only be retrained from scratch with the identical configuration, and the failure must be recorded",
+    "known_failure_recorded": {
+      "dir": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\results\\leakage_corrected_confirmatory\\runs\\lc_E5_seed7",
+      "exists": true,
+      "files": [
+        "args.yaml",
+        "labels.jpg",
+        "train_batch0.jpg",
+        "train_batch1.jpg",
+        "train_batch2.jpg",
+        "weights"
+      ],
+      "weights_present": true,
+      "reason": "incidental CUDA out-of-memory after ~1 min; no checkpoint generated; retrained from scratch under the identical configuration into lc_E5_seed7-2"
+    }
+  },
+  "amendment_rule": "After this lock is committed, no protocol element may be changed because of observed results. Any change would require a new lock file and a new commit, with the old lock preserved."
+}

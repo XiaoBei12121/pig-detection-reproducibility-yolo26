@@ -1,0 +1,7 @@
+seed,checkpoint_rule,mAP50,mAP50_95,precision,recall,batch,optimizer,amp,checkpoint_path
+1,best,0.9828,0.7911,0.9706,0.952,,,,<PIG_PROJECT>/runs/rtdetr_pigdetect/RTDETR_seed1/weights/best.pt
+1,last,0.9828,0.7911,0.9706,0.952,,,,<PIG_PROJECT>/runs/rtdetr_pigdetect/RTDETR_seed1/weights/last.pt
+7,best,0.9814,0.7919,0.9714,0.9483,,,,<PIG_PROJECT>/runs/rtdetr_pigdetect/RTDETR_seed7/weights/best.pt
+7,last,0.9814,0.7919,0.9714,0.9483,,,,<PIG_PROJECT>/runs/rtdetr_pigdetect/RTDETR_seed7/weights/last.pt
+42,best,0.9809,0.7917,0.9705,0.95,,,,<PIG_PROJECT>/runs/rtdetr_pigdetect/RTDETR_seed42/weights/best.pt
+42,last,0.9811,0.7935,0.9721,0.9469,,,,<PIG_PROJECT>/runs/rtdetr_pigdetect/RTDETR_seed42/weights/last.pt

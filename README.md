@@ -1,5 +1,7 @@
 # Reproducibility Artifact
 
+> **CEA extension, 22 September 2026:** The current reliability-oriented matched-seed and external-evaluation evidence is in [`cea_extension_v2/`](cea_extension_v2/README.md). The `v1.0.2` release below remains an unchanged historical pre-extension snapshot.
+
 **Multi-seed, checkpoint-sensitive, cross-dataset and cross-generation evaluation of lightweight YOLO modifications for pig detection**
 
 This repository is the **reproducibility artifact of a manuscript**, not a "better YOLO" project.
@@ -11,10 +13,10 @@ rules, datasets, and two YOLO generations — and the answer is largely negative
 
 | Reference | Meaning |
 |---|---|
-| **Release `v1.0.2`** | **the submission version pinned by the manuscript's Code availability statement** (resolve its commit with `git rev-list -n1 v1.0.2`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
+| **Release `v1.0.2`** | the earlier pre-extension snapshot (resolve its commit with `git rev-list -n1 v1.0.2`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
 | Release `v1.0.1` | author-metadata correction of the first frozen version; preserved for history (commit `4c72d27`) |
 | Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |
-| `main` | development branch, may receive documentation-only updates — do **not** cite it in the paper |
+| `main` | development branch, now including the CEA extension; cite a release tag or exact commit rather than a moving branch |
 
 `v1.0.2` is a strict extension of `v1.0.1`: no original result, split, weight or log was changed, and
 both earlier releases remain unchanged. The citation metadata in `CITATION.cff` still declares
@@ -48,7 +50,7 @@ Dalian 116028, Liaoning, China
 **Corresponding author:** Lifeng Yin — yinlifeng1030@djtu.edu.cn
 
 Manuscript: *"… evaluation of lightweight YOLO modifications for pig detection in densely occluded pens"* (in preparation; no journal, volume or DOI is asserted).
-The manuscript submission version of this artifact is pinned to release **`v1.0.2`**; see `PUBLIC_RELEASE_AUDIT.md` for the exact release tag and commit of every published version.
+The earlier manuscript snapshot cited **`v1.0.2`**. The current CEA reliability-oriented extension is documented in [`cea_extension_v2/`](cea_extension_v2/README.md); cite its release tag or exact commit after publication. The historical tags remain unchanged.
 
 ## Overview
 

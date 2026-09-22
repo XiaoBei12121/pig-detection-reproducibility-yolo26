@@ -1,0 +1,3 @@
+checkpoint,n_seeds,E0_mean,E0_sample_SD,E5_mean,E5_sample_SD,mean_delta,median_delta,sample_SD_delta,min_delta,max_delta,positive_negative_zero,bootstrap_resamples,bootstrap_CI_low,bootstrap_CI_high,bootstrap_CI_contains_zero,signflip_configurations,signflip_p_two_sided,signflip_p_one_sided
+best.pt,10,0.77453,0.002267,0.77531,0.002632,0.00078,0.0004,0.003715,-0.0046,0.0088,6/4/0,100000,-0.00125,0.0031,True,1024,0.564453,0.282227
+last.pt,10,0.77368,0.002197,0.77566,0.002639,0.00198,0.00015,0.004506,-0.0024,0.0093,5/5/0,100000,-0.00054,0.00473,True,1024,0.201172,0.100586

@@ -1,0 +1,19 @@
+{
+  "yaml": {
+    "file": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\dataset\\PigDetect_lc\\pig_lc.yaml",
+    "sha256": "e29520cdeb2ece4762b316e550d373b8e2dc34f4012ca2c16391c98dc3bd3564"
+  },
+  "per_split_content_sha256": {
+    "corrected_train": "f8aa741990ac6525c26393375b11728fb79e57e95297253a5d817f058f0716ad",
+    "corrected_val": "3964365ba15f0455069505e328251f10aca4ecfa889d0feb4d7afd53c909a9ff",
+    "official_test": "7b243f9ef760e910b7fd692c8030958794f59774b71cfdb2e25fa4eb0fc4c633"
+  },
+  "split_manifest_sha256": {
+    "corrected_train": "9747a6c5fbd11e51dd1bfc66f99b02dc69ec4f9f4ce69fa6a0dbf94f76be5849",
+    "corrected_val": "e8a853f0f98fe7b71582dae07fb69c54ae69606f09e0b74b6bd0323221377943",
+    "official_test": "2279854ad0a46092efecb626784a96d1df331f74737a1cda1d2aaf33a3e6637a"
+  },
+  "image_hash_list_file": "corrected_split_image_hashes.csv",
+  "image_hash_list_sha256": "1778cccbd32ad992e82a3b75fc0c04dce2af2a830e5f6a0454743614092ac728",
+  "total_images_hashed": 2931
+}

@@ -30,8 +30,9 @@ is **not** endorsed by or affiliated with Ultralytics.
 |---|---|---|
 | PigDetect / PigBench | PigBench data repository | https://doi.org/10.25625/I6UYE9 — Henrich et al., *Computers and Electronics in Agriculture* 241 (2026) 111264 |
 | PigLife | AIFARMS data portal | https://data.aifarms.org/view/piglife |
+| OinkTrack | OinkTrack project | https://leohuang0511.github.io/oinktrack-page |
 
-Neither dataset's images or annotations are redistributed in this repository. Only split lists
+None of these datasets' images or annotations are redistributed in this repository. Only split lists
 (file names), preprocessing scripts and derived aggregate statistics are included.
 
 ## Citation of YOLO26

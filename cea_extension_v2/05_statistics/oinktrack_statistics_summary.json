@@ -1,0 +1,232 @@
+{
+  "generated": "2026-09-17T17:01:28",
+  "input": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\experiments\\cea_extension_v2\\results\\oinktrack_all_evaluations.csv",
+  "label": "oinktrack",
+  "rules": {
+    "bootstrap_resamples": 100000,
+    "bootstrap_rng_seed": 20260916,
+    "signflip": "exact enumeration of 2^n configurations",
+    "checkpoint_rules_analysed_separately": [
+      "best",
+      "last"
+    ]
+  },
+  "checkpoint_rules": {
+    "best": {
+      "n_seeds": 10,
+      "seeds": [
+        1,
+        7,
+        21,
+        42,
+        100,
+        101,
+        103,
+        107,
+        109,
+        113
+      ],
+      "per_seed": {
+        "1": {
+          "E0": 0.3622,
+          "E5": 0.3752,
+          "delta": 0.013
+        },
+        "7": {
+          "E0": 0.3824,
+          "E5": 0.3708,
+          "delta": -0.0116
+        },
+        "21": {
+          "E0": 0.377,
+          "E5": 0.3748,
+          "delta": -0.0022
+        },
+        "42": {
+          "E0": 0.3765,
+          "E5": 0.3654,
+          "delta": -0.0111
+        },
+        "100": {
+          "E0": 0.3468,
+          "E5": 0.3523,
+          "delta": 0.0055
+        },
+        "101": {
+          "E0": 0.3709,
+          "E5": 0.3704,
+          "delta": -0.0005
+        },
+        "103": {
+          "E0": 0.3708,
+          "E5": 0.3544,
+          "delta": -0.0164
+        },
+        "107": {
+          "E0": 0.3741,
+          "E5": 0.3652,
+          "delta": -0.0089
+        },
+        "109": {
+          "E0": 0.3513,
+          "E5": 0.3567,
+          "delta": 0.0054
+        },
+        "113": {
+          "E0": 0.3752,
+          "E5": 0.3523,
+          "delta": -0.0229
+        }
+      },
+      "E0_mean": 0.36872,
+      "E0_sample_sd": 0.011656,
+      "E5_mean": 0.36375,
+      "E5_sample_sd": 0.009137,
+      "per_seed_delta": [
+        0.013,
+        -0.0116,
+        -0.0022,
+        -0.0111,
+        0.0055,
+        -0.0005,
+        -0.0164,
+        -0.0089,
+        0.0054,
+        -0.0229
+      ],
+      "mean_delta": -0.00497,
+      "median_delta": -0.00555,
+      "sample_SD_delta": 0.01114,
+      "min_delta": -0.0229,
+      "max_delta": 0.013,
+      "positive_pairs": 3,
+      "negative_pairs": 7,
+      "zero_pairs": 0,
+      "bootstrap": {
+        "type": "paired bootstrap, sampling the paired deltas with replacement",
+        "resamples": 100000,
+        "rng_seed": 20260916,
+        "method": "percentile 95% CI",
+        "ci_low": -0.01141,
+        "ci_high": 0.00157,
+        "contains_zero": true,
+        "resample_means_file": "bootstrap_best.csv"
+      },
+      "signflip": {
+        "type": "exact paired sign-flip permutation, full enumeration",
+        "configurations": 1024,
+        "p_one_sided": 0.092773,
+        "p_two_sided": 0.185547,
+        "min_attainable_two_sided_p": 0.001953
+      }
+    },
+    "last": {
+      "n_seeds": 10,
+      "seeds": [
+        1,
+        7,
+        21,
+        42,
+        100,
+        101,
+        103,
+        107,
+        109,
+        113
+      ],
+      "per_seed": {
+        "1": {
+          "E0": 0.3622,
+          "E5": 0.3739,
+          "delta": 0.0117
+        },
+        "7": {
+          "E0": 0.3715,
+          "E5": 0.3697,
+          "delta": -0.0018
+        },
+        "21": {
+          "E0": 0.3781,
+          "E5": 0.37,
+          "delta": -0.0081
+        },
+        "42": {
+          "E0": 0.3741,
+          "E5": 0.3622,
+          "delta": -0.0119
+        },
+        "100": {
+          "E0": 0.3505,
+          "E5": 0.3545,
+          "delta": 0.004
+        },
+        "101": {
+          "E0": 0.3727,
+          "E5": 0.3708,
+          "delta": -0.0019
+        },
+        "103": {
+          "E0": 0.3657,
+          "E5": 0.3512,
+          "delta": -0.0145
+        },
+        "107": {
+          "E0": 0.3588,
+          "E5": 0.354,
+          "delta": -0.0048
+        },
+        "109": {
+          "E0": 0.3568,
+          "E5": 0.3535,
+          "delta": -0.0033
+        },
+        "113": {
+          "E0": 0.3694,
+          "E5": 0.3523,
+          "delta": -0.0171
+        }
+      },
+      "E0_mean": 0.36598,
+      "E0_sample_sd": 0.008756,
+      "E5_mean": 0.36121,
+      "E5_sample_sd": 0.009064,
+      "per_seed_delta": [
+        0.0117,
+        -0.0018,
+        -0.0081,
+        -0.0119,
+        0.004,
+        -0.0019,
+        -0.0145,
+        -0.0048,
+        -0.0033,
+        -0.0171
+      ],
+      "mean_delta": -0.00477,
+      "median_delta": -0.00405,
+      "sample_SD_delta": 0.008667,
+      "min_delta": -0.0171,
+      "max_delta": 0.0117,
+      "positive_pairs": 2,
+      "negative_pairs": 8,
+      "zero_pairs": 0,
+      "bootstrap": {
+        "type": "paired bootstrap, sampling the paired deltas with replacement",
+        "resamples": 100000,
+        "rng_seed": 20260916,
+        "method": "percentile 95% CI",
+        "ci_low": -0.00965,
+        "ci_high": 0.00042,
+        "contains_zero": true,
+        "resample_means_file": "bootstrap_last.csv"
+      },
+      "signflip": {
+        "type": "exact paired sign-flip permutation, full enumeration",
+        "configurations": 1024,
+        "p_one_sided": 0.056641,
+        "p_two_sided": 0.113281,
+        "min_attainable_two_sided_p": 0.001953
+      }
+    }
+  }
+}

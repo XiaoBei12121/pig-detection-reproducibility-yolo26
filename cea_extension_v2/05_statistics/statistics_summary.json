@@ -1,0 +1,239 @@
+{
+  "generated": "2026-09-17T17:03:24",
+  "input": "C:\\Users\\26079\\PycharmProjects\\yolo26\\pig_project\\experiments\\cea_extension_v2\\results\\pigdetect_corrected_combined.csv",
+  "label": "pigdetect_corrected_10seed",
+  "rules": {
+    "bootstrap_resamples": 100000,
+    "bootstrap_rng_seed": 20260916,
+    "signflip": "exact enumeration of all 2^n sign assignments; probabilities evaluated in exact rational/decimal arithmetic from the highest-precision decimal text persisted in the evaluation CSV (no binary floating point); two-sided p = count(|T_perm| >= |T_obs|) / 2^n with exact ties included in the count",
+    "checkpoint_rules_analysed_separately": [
+      "best",
+      "last"
+    ]
+  },
+  "checkpoint_rules": {
+    "best": {
+      "n_seeds": 10,
+      "seeds": [
+        1,
+        7,
+        21,
+        42,
+        100,
+        101,
+        103,
+        107,
+        109,
+        113
+      ],
+      "per_seed": {
+        "1": {
+          "E0": 0.7712,
+          "E5": 0.78,
+          "delta": 0.0088
+        },
+        "7": {
+          "E0": 0.7749,
+          "E5": 0.7781,
+          "delta": 0.0032
+        },
+        "21": {
+          "E0": 0.7761,
+          "E5": 0.7736,
+          "delta": -0.0025
+        },
+        "42": {
+          "E0": 0.778,
+          "E5": 0.7781,
+          "delta": 0.0001
+        },
+        "100": {
+          "E0": 0.7747,
+          "E5": 0.7754,
+          "delta": 0.0007
+        },
+        "101": {
+          "E0": 0.7768,
+          "E5": 0.7722,
+          "delta": -0.0046
+        },
+        "103": {
+          "E0": 0.7728,
+          "E5": 0.7721,
+          "delta": -0.0007
+        },
+        "107": {
+          "E0": 0.7715,
+          "E5": 0.7747,
+          "delta": 0.0032
+        },
+        "109": {
+          "E0": 0.7759,
+          "E5": 0.7743,
+          "delta": -0.0016
+        },
+        "113": {
+          "E0": 0.7734,
+          "E5": 0.7746,
+          "delta": 0.0012
+        }
+      },
+      "E0_mean": 0.77453,
+      "E0_sample_sd": 0.002267,
+      "E5_mean": 0.77531,
+      "E5_sample_sd": 0.002632,
+      "per_seed_delta": [
+        0.0088,
+        0.0032,
+        -0.0025,
+        0.0001,
+        0.0007,
+        -0.0046,
+        -0.0007,
+        0.0032,
+        -0.0016,
+        0.0012
+      ],
+      "mean_delta": 0.00078,
+      "median_delta": 0.0004,
+      "sample_SD_delta": 0.003715,
+      "min_delta": -0.0046,
+      "max_delta": 0.0088,
+      "positive_pairs": 6,
+      "negative_pairs": 4,
+      "zero_pairs": 0,
+      "bootstrap": {
+        "type": "paired bootstrap, sampling the paired deltas with replacement",
+        "resamples": 100000,
+        "rng_seed": 20260916,
+        "method": "percentile 95% CI",
+        "ci_low": -0.00125,
+        "ci_high": 0.0031,
+        "contains_zero": true,
+        "resample_means_file": "bootstrap_best.csv"
+      },
+      "signflip": {
+        "type": "exact paired sign-flip permutation, full enumeration",
+        "configurations": 1024,
+        "p_one_sided": 0.282227,
+        "p_two_sided": 0.564453,
+        "min_attainable_two_sided_p": 0.001953
+      }
+    },
+    "last": {
+      "n_seeds": 10,
+      "seeds": [
+        1,
+        7,
+        21,
+        42,
+        100,
+        101,
+        103,
+        107,
+        109,
+        113
+      ],
+      "per_seed": {
+        "1": {
+          "E0": 0.7712,
+          "E5": 0.7795,
+          "delta": 0.0083
+        },
+        "7": {
+          "E0": 0.7723,
+          "E5": 0.7779,
+          "delta": 0.0056
+        },
+        "21": {
+          "E0": 0.7756,
+          "E5": 0.7735,
+          "delta": -0.0021
+        },
+        "42": {
+          "E0": 0.7729,
+          "E5": 0.7772,
+          "delta": 0.0043
+        },
+        "100": {
+          "E0": 0.7763,
+          "E5": 0.7762,
+          "delta": -0.0001
+        },
+        "101": {
+          "E0": 0.7749,
+          "E5": 0.7728,
+          "delta": -0.0021
+        },
+        "103": {
+          "E0": 0.7745,
+          "E5": 0.7721,
+          "delta": -0.0024
+        },
+        "107": {
+          "E0": 0.7696,
+          "E5": 0.7789,
+          "delta": 0.0093
+        },
+        "109": {
+          "E0": 0.7735,
+          "E5": 0.7739,
+          "delta": 0.0004
+        },
+        "113": {
+          "E0": 0.776,
+          "E5": 0.7746,
+          "delta": -0.0014
+        }
+      },
+      "E0_mean": 0.77368,
+      "E0_sample_sd": 0.002197,
+      "E5_mean": 0.77566,
+      "E5_sample_sd": 0.002639,
+      "per_seed_delta": [
+        0.0083,
+        0.0056,
+        -0.0021,
+        0.0043,
+        -0.0001,
+        -0.0021,
+        -0.0024,
+        0.0093,
+        0.0004,
+        -0.0014
+      ],
+      "mean_delta": 0.00198,
+      "median_delta": 0.00015,
+      "sample_SD_delta": 0.004506,
+      "min_delta": -0.0024,
+      "max_delta": 0.0093,
+      "positive_pairs": 5,
+      "negative_pairs": 5,
+      "zero_pairs": 0,
+      "bootstrap": {
+        "type": "paired bootstrap, sampling the paired deltas with replacement",
+        "resamples": 100000,
+        "rng_seed": 20260916,
+        "method": "percentile 95% CI",
+        "ci_low": -0.00054,
+        "ci_high": 0.00473,
+        "contains_zero": true,
+        "resample_means_file": "bootstrap_last.csv"
+      },
+      "signflip": {
+        "type": "exact paired sign-flip permutation, full enumeration",
+        "statistic": "paired mean delta (E5 - E0), exact rational arithmetic",
+        "configurations": 1024,
+        "p_one_sided": 0.100586,
+        "p_two_sided": 0.201172,
+        "p_one_sided_exact": 0.1005859375,
+        "p_two_sided_exact": 0.201171875,
+        "p_one_sided_fraction": "103/1024",
+        "p_two_sided_fraction": "206/1024",
+        "ties_included": true,
+        "min_attainable_two_sided_p": 0.001953,
+        "display_precision_note": "p_one_sided/p_two_sided are the 6-dp display values of the exact decimals in p_one_sided_exact/p_two_sided_exact; every sign-flip p here has a power-of-two denominator, so both the decimal and the binary float representation of the value are exact"
+      }
+    }
+  }
+}

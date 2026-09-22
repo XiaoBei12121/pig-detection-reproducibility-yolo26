@@ -1,0 +1,5 @@
+dataset,checkpoint,configurations,exact_count_two_sided,exact_denominator_two_sided,exact_fraction_two_sided,exact_decimal_two_sided,display_p_two_sided,exact_count_one_sided,exact_denominator_one_sided,exact_fraction_one_sided,exact_decimal_one_sided,display_p_one_sided,min_attainable_two_sided_count,min_attainable_two_sided_fraction,min_attainable_two_sided_decimal,min_attainable_two_sided_display
+PigDetect,best,1024,578,1024,578/1024,0.564453125,0.564453,289,1024,289/1024,0.2822265625,0.282227,2,2/1024,0.001953125,0.001953
+PigDetect,last,1024,206,1024,206/1024,0.201171875,0.201172,103,1024,103/1024,0.1005859375,0.100586,2,2/1024,0.001953125,0.001953
+OinkTrack,best,1024,190,1024,190/1024,0.185546875,0.185547,95,1024,95/1024,0.0927734375,0.092773,2,2/1024,0.001953125,0.001953
+OinkTrack,last,1024,116,1024,116/1024,0.11328125,0.113281,58,1024,58/1024,0.056640625,0.056641,2,2/1024,0.001953125,0.001953
