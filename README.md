@@ -2,26 +2,27 @@
 
 > **CEA extension, 22 September 2026:** The current reliability-oriented matched-seed and external-evaluation evidence is in [`cea_extension_v2/`](cea_extension_v2/README.md). The `v1.0.2` release below remains an unchanged historical pre-extension snapshot.
 
-**Multi-seed, checkpoint-sensitive, cross-dataset and cross-generation evaluation of lightweight YOLO modifications for pig detection**
+**Reliable model selection for pig detection using matched seeds, checkpoint control, and external evaluation**
 
 This repository is the **reproducibility artifact of a manuscript**, not a "better YOLO" project.
 The main conclusion is **not** that CA+SIoU consistently improves YOLO26s. Instead, the experiments
 evaluate whether small apparent gains remain stable across random seeds, checkpoint-selection
-rules, datasets, and two YOLO generations — and the answer is largely negative.
+rules, datasets, and external evaluation. Under the evaluated conditions, evidence was
+insufficient to justify replacing E0 with E5.
 
 ### Version you should cite
 
 | Reference | Meaning |
 |---|---|
+| **Release `v2.0.0`** | CEA reliability-oriented evidence snapshot: 10 matched E0/E5 seeds, frozen OinkTrack evaluation, exact sign-flip, failure-condition and latency summaries |
 | **Release `v1.0.2`** | the earlier pre-extension snapshot (resolve its commit with `git rev-list -n1 v1.0.2`); adds the leakage-corrected confirmatory experiment, `docs/SPLIT_CORRECTION_REPORT.md`, table19/table20 and fig12 |
 | Release `v1.0.1` | author-metadata correction of the first frozen version; preserved for history (commit `4c72d27`) |
 | Release `v1.0.0` | first frozen publication (author metadata still `TBD` in `CITATION.cff`); kept for history |
 | `main` | development branch, now including the CEA extension; cite a release tag or exact commit rather than a moving branch |
 
 `v1.0.2` is a strict extension of `v1.0.1`: no original result, split, weight or log was changed, and
-both earlier releases remain unchanged. The citation metadata in `CITATION.cff` still declares
-version `1.0.1`; only the Code availability statement was moved to `v1.0.2`, so the cited artifact
-contains the confirmatory experiment and the split-correction audit.
+both earlier releases remain unchanged. The historical `v1.0.2` tag preserves its pre-extension evidence; the current `CITATION.cff`
+declares version `2.0.0` for the public CEA extension snapshot.
 
 ### What can be reproduced without retraining — and what cannot
 
@@ -49,7 +50,7 @@ Dalian 116028, Liaoning, China
 
 **Corresponding author:** Lifeng Yin — yinlifeng1030@djtu.edu.cn
 
-Manuscript: *"… evaluation of lightweight YOLO modifications for pig detection in densely occluded pens"* (in preparation; no journal, volume or DOI is asserted).
+Manuscript: *"Reliable Model Selection for Pig Detection in Precision Livestock Farming Using Matched Seed Replication and External Evaluation"* (in preparation; no journal, volume or DOI is asserted).
 The earlier manuscript snapshot cited **`v1.0.2`**. The current CEA reliability-oriented extension is documented in [`cea_extension_v2/`](cea_extension_v2/README.md); cite its release tag or exact commit after publication. The historical tags remain unchanged.
 
 ## Overview
