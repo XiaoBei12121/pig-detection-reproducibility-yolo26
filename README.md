@@ -23,7 +23,7 @@ insufficient to justify replacing E0 with E5.
 
 `v1.0.2` is a strict extension of `v1.0.1`: no original result, split, weight or log was changed, and
 both earlier releases remain unchanged. The historical `v1.0.2` tag preserves its pre-extension evidence; the current `CITATION.cff`
-declares version `2.0.0` for the public CEA extension snapshot.
+declares version `2.0.1` for the current public CEA extension snapshot.
 
 ### What can be reproduced without retraining — and what cannot
 
